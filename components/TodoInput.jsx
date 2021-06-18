@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Button, Flex, Input } from "@theme-ui/components";
 
 export default function TodoInput() {
-  const [description, setDescription] = useState("");
+  function computeExpensiveValue(returnValue) {
+    const randomNumbers = Array(100000000).map(() => Math.random());
+    randomNumbers.sort((a, b) => a - b);
+    return returnValue;
+  }
+  const [description, setDescription] = useState(computeExpensiveValue(""));
 
   return (
     <Flex sx={{ gap: 3 }}>

@@ -67,6 +67,10 @@ const input = {
     outline: 0,
     boxShadow: "0 0 0 0.25rem rgba(13, 110, 253, 0.25)",
   },
+  "&:disabled": {
+    backgroundColor: "#e9ecef",
+    opacity: 1,  
+  }
 };
 const forms = { input };
 

@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
 import TodoInput from "../components/TodoInput";
+import TodoItem from "../components/TodoItem";
 
 export default function Home() {
   return (
@@ -14,7 +15,11 @@ export default function Home() {
         To-Do List Project
       </h1>
 
-      <TodoInput />
+      <TodoInput className="mb-5" />
+
+      <TodoItem id="example-todo">
+        Learn how to use <code>useState</code>.
+      </TodoItem>
     </Container>
   );
 }

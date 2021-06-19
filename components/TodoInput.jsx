@@ -1,24 +1,21 @@
 import React, { useState } from "react";
-import { Button, Flex, Input } from "@theme-ui/components";
+import { Col, Button, Form } from "react-bootstrap";
 
-export default function TodoInput() {
-  function computeExpensiveValue(returnValue) {
-    const randomNumbers = Array(100000000).map(() => Math.random());
-    randomNumbers.sort((a, b) => a - b);
-    return returnValue;
-  }
-  const [description, setDescription] = useState(() => {
-    return computeExpensiveValue("");
-  });
+export default function TodoInput(props) {
+  const [description, setDescription] = useState("");
 
   return (
-    <Flex sx={{ gap: 3 }}>
-      <Input
-        aria-label="To-do item description"
-        value={description}
-        onChange={(event) => setDescription(event.target.value)}
-      />
-      <Button sx={{ flexShrink: 0 }}>Add</Button>
-    </Flex>
+    <Form.Row {...props}>
+      <Col>
+        <Form.Control
+          aria-label="To-do item input"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
+      </Col>
+      <Col xs="auto">
+        <Button>Add</Button>
+      </Col>
+    </Form.Row>
   );
 }

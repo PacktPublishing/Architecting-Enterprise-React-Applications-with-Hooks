@@ -1,19 +1,18 @@
 import React from "react";
 import Head from "next/head";
-import { Container } from "theme-ui";
-import { H1 } from "../components/headings";
+import { Container } from "react-bootstrap";
 import TodoInput from "../components/TodoInput";
 
 export default function Home() {
   return (
-    <Container variant="md" mt={5}>
+    <Container fluid style={{ maxWidth: "720px" }} className="mt-5">
       <Head>
         <title>To-Do List Project</title>
       </Head>
 
-      <H1 mb={5} sx={{ textAlign: "center" }}>
+      <h1 className="mb-5" style={{ textAlign: "center" }}>
         To-Do List Project
-      </H1>
+      </h1>
 
       <TodoInput />
     </Container>

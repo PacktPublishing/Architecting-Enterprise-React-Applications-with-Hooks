@@ -9,11 +9,12 @@
     "rename-bubble": "node scripts/checkpoint-rename-bubble.mjs"
   },
   "dependencies": {
-    "@theme-ui/presets": "^0.9.1",
+    "bootstrap": "^4.6.0",
+    "lodash": "^4.17.21",
     "next": "^10.2.3",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "theme-ui": "^0.9.1"
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "eslint": "^7.28.0",

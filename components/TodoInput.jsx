@@ -7,7 +7,9 @@ export default function TodoInput() {
     randomNumbers.sort((a, b) => a - b);
     return returnValue;
   }
-  const [description, setDescription] = useState(computeExpensiveValue(""));
+  const [description, setDescription] = useState(() => {
+    return computeExpensiveValue("");
+  });
 
   return (
     <Flex sx={{ gap: 3 }}>

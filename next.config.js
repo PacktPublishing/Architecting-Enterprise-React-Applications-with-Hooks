@@ -25,6 +25,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.4/components/TodoItem.jsx#L6-L14",
         permanent: true,
       },
+      {
+        source: "/checkpoint-1.5",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.5/pages/index.jsx",
+        permanent: true,
+      },
     ];
   },
 };

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { Col, Button, Form } from "react-bootstrap";
 
-export default function TodoInput(props) {
+function TodoInput(props, ref) {
   const [description, setDescription] = useState("");
 
   return (
@@ -11,6 +11,7 @@ export default function TodoInput(props) {
           aria-label="To-do item input"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
+          ref={ref}
         />
       </Col>
       <Col xs="auto">
@@ -19,3 +20,4 @@ export default function TodoInput(props) {
     </Form.Row>
   );
 }
+export default forwardRef(TodoInput);

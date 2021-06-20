@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
-export default function TodoItem({ children, ...props }) {
+export default function TodoItem({ children, onComplete, ...props }) {
   const [complete, setComplete] = useState(false);
   function toggleComplete() {
     setComplete((previouslyComplete) => !previouslyComplete);
+
+    if (!complete && onComplete) {
+      onComplete();
+    }
   }
 
   return (

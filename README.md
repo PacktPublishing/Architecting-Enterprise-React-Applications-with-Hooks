@@ -11,3 +11,4 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 1.3](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.3/components/TodoItem.jsx#L5-L8)
 - [Checkpoint 1.4](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.4/components/TodoItem.jsx#L6-L14)
 - [Checkpoint 1.5](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.5/pages/index.jsx)
+- [Checkpoint 1.6](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/commit/Checkpoint_1.6)

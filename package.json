@@ -2,7 +2,7 @@
   "name": "todo-list-project",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm install && next dev",
     "build": "next build",
     "start": "next start"
   },

@@ -4,7 +4,13 @@ import { Form } from "react-bootstrap";
 export default function TodoItem({ children, ...props }) {
   const [complete, setComplete] = useState(false);
   function toggleComplete() {
-    setComplete((previouslyComplete) => !previouslyComplete);
+    console.log("Calling setComplete the first time...");
+    setComplete(!complete);
+
+    setTimeout(() => {
+      console.log("Calling setComplete the second time.");
+      setComplete(!complete);
+    }, 3000);
   }
 
   return (

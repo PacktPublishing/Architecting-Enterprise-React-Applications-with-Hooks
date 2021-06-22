@@ -43,6 +43,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.7%5E..Checkpoint_1.7#diff-3bee99af9a07d239b70ae72925c716008bd316cce43dfbafd095229b4d1d34fa",
         permanent: true,
       },
+      {
+        source: "/checkpoint-1.8",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.8/components/TodoItem.jsx#L14-L23",
+        permanent: true,
+      },
     ];
   },
 };

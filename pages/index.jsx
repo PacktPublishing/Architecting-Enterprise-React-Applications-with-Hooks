@@ -18,7 +18,7 @@ export default function Home() {
       <TodoInput className="mb-5" />
 
       <TodoItem id="example-todo">
-        Learn how to use <code>useState</code>.
+        Learn how to use <code>useRef</code>.
       </TodoItem>
     </Container>
   );

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 export default function TodoItem({ children, onComplete, ...props }) {
@@ -11,23 +11,12 @@ export default function TodoItem({ children, onComplete, ...props }) {
     }
   }
 
-  const intervalId = useRef(null);
-  function handleClick() {
-    if (!intervalId.current) {
-      toggleComplete();
-      intervalId.current = setInterval(toggleComplete, 500);
-    } else {
-      clearInterval(intervalId.current);
-      intervalId.current = null;
-    }
-  }
-
   return (
     <Form.Check type="checkbox" {...props}>
       <Form.Check.Input
         type="checkbox"
         checked={complete}
-        onChange={handleClick}
+        onChange={toggleComplete}
         style={{ cursor: "pointer" }}
       />
       <Form.Check.Label

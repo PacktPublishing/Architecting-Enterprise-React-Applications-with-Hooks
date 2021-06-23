@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+import Markdown from "react-markdown";
 
 export default function TodoItem({ children, onComplete, ...props }) {
   const [complete, setComplete] = useState(false);
@@ -25,7 +26,7 @@ export default function TodoItem({ children, onComplete, ...props }) {
           cursor: "pointer",
         }}
       >
-        {children}
+        <Markdown>{children}</Markdown>
       </Form.Check.Label>
     </Form.Check>
   );

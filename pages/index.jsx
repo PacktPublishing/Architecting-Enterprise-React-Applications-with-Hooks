@@ -17,9 +17,7 @@ export default function Home() {
 
       <TodoInput className="mb-5" />
 
-      <TodoItem id="example-todo">
-        Learn how to use <code>useRef</code>.
-      </TodoItem>
+      <TodoItem id="example-todo">Learn how to use `useContext`.</TodoItem>
     </Container>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
 import TodoInput from "../components/TodoInput";
-import TodoItem from "../components/TodoItem";
+import TodoList from "../components/TodoList";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
 
       <TodoInput className="mb-5" />
 
-      <TodoItem id="example-todo">Learn how to use `useContext`.</TodoItem>
+      <TodoList />
     </Container>
   );
 }

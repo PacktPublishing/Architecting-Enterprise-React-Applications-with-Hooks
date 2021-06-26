@@ -67,6 +67,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.11%5E..Checkpoint_1.11",
         permanent: true,
       },
+      {
+        source: "/checkpoint-1.12",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.12%5E..Checkpoint_1.12",
+        permanent: true,
+      },
     ];
   },
 };

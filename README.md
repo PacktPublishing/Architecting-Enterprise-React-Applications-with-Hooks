@@ -16,3 +16,4 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 1.8](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.8/components/todo-item.jsx#L14-L23)
 - [Checkpoint 1.9](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.9)
 - [Checkpoint 1.10](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.10/localization.json)
+- [Checkpoint 1.11](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.11%5E..Checkpoint_1.11)

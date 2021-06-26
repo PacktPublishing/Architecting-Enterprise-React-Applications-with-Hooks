@@ -46,7 +46,7 @@ const exec = util.promisify(require("child_process").exec);
       previousBranch = branch;
     }
 
-    exec("git push --all --force-with-lease");
+    exec("git push --all --set-upstream origin --force-with-lease");
   } catch (error) {
     console.error(error.stderr);
     process.exitCode = 1;

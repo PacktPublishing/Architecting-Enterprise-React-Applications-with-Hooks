@@ -1,11 +1,9 @@
 import React, { forwardRef, useContext, useState } from "react";
 import { Col, Button, Form } from "react-bootstrap";
-import LocaleContext from "../contexts/LocaleContext";
-import localization from "../localization.json";
+import LocalizationContext from "../contexts/LocalizationContext";
 
 function TodoInput(props, ref) {
-  const locale = useContext(LocaleContext);
-  const localizedStrings = localization[locale].todoInput;
+  const { todoInput: localizedStrings } = useContext(LocalizationContext);
 
   const [description, setDescription] = useState("");
 

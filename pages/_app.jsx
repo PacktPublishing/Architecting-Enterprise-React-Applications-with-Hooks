@@ -1,11 +1,12 @@
 import React from "react";
-import LocaleContext from "../contexts/LocaleContext";
+import LocalizationContext from "../contexts/LocalizationContext";
+import localization from "../localization.json";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App({ Component, pageProps }) {
   return (
-    <LocaleContext.Provider value="en-US">
+    <LocalizationContext.Provider value={localization["en-US"]}>
       <Component {...pageProps} />
-    </LocaleContext.Provider>
+    </LocalizationContext.Provider>
   );
 }

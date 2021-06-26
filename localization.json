@@ -1,0 +1,26 @@
+{
+  "en-US": {
+    "indexPage": {
+      "projectTitle": "To-Do List Project"
+    },
+    "todoInput": {
+      "inputLabel": "To-do item input",
+      "add": "Add"
+    },
+    "todoList": {
+      "exampleTodoDescription": "Learn how to use `useContext`."
+    }
+  },
+  "tlh": {
+    "indexPage": {
+      "projectTitle": "DaytuqQo'qoq"
+    },
+    "todoInput": {
+      "inputLabel": "'e' yIlIjQo', ghaH'e'",
+      "add": "boq"
+    },
+    "todoList": {
+      "exampleTodoDescription": "Say'moH'a' QoraQ tuq."
+    }
+  }
+}

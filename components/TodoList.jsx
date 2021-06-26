@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import LocaleContext from "../contexts/LocaleContext";
+import localization from "../localization.json";
 import TodoItem from "./TodoItem";
 
 export default function TodoList() {
-  return <TodoItem id="example-todo">Learn how to use `useContext`.</TodoItem>;
+  const locale = useContext(LocaleContext);
+  const localizedStrings = localization[locale].todoList;
+
+  return (
+    <TodoItem id="example-todo">
+      {localizedStrings.exampleTodoDescription}
+    </TodoItem>
+  );
 }

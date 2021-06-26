@@ -42,10 +42,11 @@ const exec = util.promisify(require("child_process").exec);
       await exec(`
         git checkout ${branch};
         git rebase --strategy-option ours ${previousBranch};
-        git push --force-with-lease;
       `);
       previousBranch = branch;
     }
+
+    exec("git push --all --force-with-lease");
   } catch (error) {
     console.error(error.stderr);
     process.exitCode = 1;

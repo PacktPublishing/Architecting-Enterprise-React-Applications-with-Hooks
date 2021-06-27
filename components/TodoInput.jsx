@@ -1,6 +1,6 @@
 import React, { forwardRef, useContext, useState } from "react";
 import { Col, Button, Form } from "react-bootstrap";
-import LocalizationContext from "../contexts/LocalizationContext";
+import { LocalizationContext } from "../contexts/localization";
 
 function TodoInput(props, ref) {
   const { todoInput: localizedStrings } = useContext(LocalizationContext);

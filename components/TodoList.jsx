@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import LocalizationContext from "../contexts/LocalizationContext";
+import { LocalizationContext } from "../contexts/localization";
 import TodoItem from "./TodoItem";
 
 export default function TodoList() {

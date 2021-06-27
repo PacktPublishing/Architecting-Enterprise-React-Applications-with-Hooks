@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Container } from "react-bootstrap";
 import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
-import LocalizationContext from "../contexts/LocalizationContext";
+import { LocalizationContext } from "../contexts/localization";
 
 export default function Home() {
   const { indexPage: localizedStrings } = useContext(LocalizationContext);

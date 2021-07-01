@@ -13,7 +13,7 @@
       "add": "Add"
     },
     "todoList": {
-      "exampleTodoDescription": "Learn how to use `useContext`."
+      "exampleTodoDescription": "Learn how to use `useReducer`."
     }
   },
   "tlh": {
@@ -30,7 +30,7 @@
       "add": "boq"
     },
     "todoList": {
-      "exampleTodoDescription": "Say'moH'a' QoraQ tuq."
+      "exampleTodoDescription": "<Horey'So, HIqelchu'be'chugh vay' neH."
     }
   }
 }

@@ -85,6 +85,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.14/components/LanguageSelect.jsx",
         permanent: true,
       },
+      {
+        source: "/checkpoint-1.15",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.15",
+        permanent: true,
+      },
     ];
   },
 };

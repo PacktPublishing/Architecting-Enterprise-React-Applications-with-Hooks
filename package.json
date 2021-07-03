@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "immutable": "^4.0.0",
     "lodash": "^4.17.21",
+    "nanoid": "^3.1.23",
     "next": "^10.2.3",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
@@ -22,7 +24,6 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "immutable": "^4.0.0",
     "prettier": "^2.3.1",
     "simple-git": "^2.47.0"
   }

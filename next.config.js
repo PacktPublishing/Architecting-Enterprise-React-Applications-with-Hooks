@@ -91,6 +91,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.15",
         permanent: true,
       },
+      {
+        source: "/checkpoint-1.16",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.16/reducers/todoList.js",
+        permanent: true,
+      },
     ];
   },
 };

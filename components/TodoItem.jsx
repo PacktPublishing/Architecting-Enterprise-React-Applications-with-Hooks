@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
 import Markdown from "react-markdown";
 
-export default function TodoItem({ children, onComplete, ...props }) {
-  const [complete, setComplete] = useState(false);
-  function toggleComplete() {
-    setComplete((previouslyComplete) => !previouslyComplete);
-
-    if (!complete && onComplete) {
-      onComplete();
-    }
-  }
+export default function TodoItem({
+  children,
+  taskKey,
+  complete,
+  ...checkboxProps
+}) {
+  function toggleComplete() {}
 
   return (
-    <Form.Check type="checkbox" {...props}>
+    <Form.Check {...checkboxProps} type="checkbox" id={`task-${taskKey}`}>
       <Form.Check.Input
         type="checkbox"
         checked={complete}
@@ -26,7 +24,13 @@ export default function TodoItem({ children, onComplete, ...props }) {
           cursor: "pointer",
         }}
       >
-        <Markdown>{children}</Markdown>
+        <Markdown
+          allowedElements={["a", "code", "em", "p", "strong"]}
+          // eslint-disable-next-line react/display-name, no-unused-vars
+          components={{ p: ({ node, ...props }) => <span {...props} /> }}
+        >
+          {children}
+        </Markdown>
       </Form.Check.Label>
     </Form.Check>
   );

@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
-import { LocalizationContext } from "../contexts/localization";
+import React from "react";
 import TodoItem from "./TodoItem";
 
-export default function TodoList() {
-  const { localizedStrings } = useContext(LocalizationContext);
-
+export default function TodoList({ tasks }) {
   return (
-    <TodoItem id="example-todo">
-      {localizedStrings.todoList.exampleTodoDescription}
-    </TodoItem>
+    <>
+      {tasks
+        .map(({ description, complete }, key) => (
+          <TodoItem key={key} taskKey={key} complete={complete}>
+            {description}
+          </TodoItem>
+        ))
+        .toArray()}
+    </>
   );
 }

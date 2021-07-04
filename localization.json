@@ -11,9 +11,6 @@
     "todoInput": {
       "inputLabel": "To-do item input",
       "add": "Add"
-    },
-    "todoList": {
-      "exampleTodoDescription": "Learn how to use `useReducer`."
     }
   },
   "tlh": {
@@ -28,9 +25,6 @@
     "todoInput": {
       "inputLabel": "'e' yIlIjQo', ghaH'e'",
       "add": "boq"
-    },
-    "todoList": {
-      "exampleTodoDescription": "<Horey'So, HIqelchu'be'chugh vay' neH."
     }
   }
 }

@@ -27,7 +27,7 @@ export default function Home() {
 
         <TodoInput className="mb-5" />
 
-        <TodoList />
+        <TodoList tasks={tasks} />
       </Container>
     </>
   );

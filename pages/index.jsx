@@ -25,9 +25,9 @@ export default function Home() {
           {localizedStrings.indexPage.projectTitle}
         </h1>
 
-        <TodoInput className="mb-5" />
+        <TodoInput dispatch={dispatch} className="mb-5" />
 
-        <TodoList tasks={tasks} />
+        <TodoList tasks={tasks} dispatch={dispatch} />
       </Container>
     </>
   );

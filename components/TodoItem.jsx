@@ -1,14 +1,19 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import Markdown from "react-markdown";
+import { TASK_ACTIONS } from "../reducers/todoListReducer";
+
+const { TOGGLE_COMPLETE } = TASK_ACTIONS;
 
 export default function TodoItem({
   children,
   taskKey,
   complete,
+  dispatch,
   ...checkboxProps
 }) {
-  function toggleComplete() {}
+  const toggleComplete = () =>
+    dispatch({ type: TOGGLE_COMPLETE, key: taskKey });
 
   return (
     <Form.Check {...checkboxProps} type="checkbox" id={`task-${taskKey}`}>

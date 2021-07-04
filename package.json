@@ -9,7 +9,11 @@
     "rename-bubble": "node scripts/checkpoint-rename-bubble.mjs"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "bootstrap": "^4.6.0",
+    "clsx": "^1.1.1",
     "immutable": "^4.0.0",
     "lodash": "^4.17.21",
     "nanoid": "^3.1.23",

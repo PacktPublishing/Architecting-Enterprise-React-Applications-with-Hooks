@@ -1,6 +1,7 @@
 {
   "en-US": {
     "add": "Add",
+    "deleteTask": "Delete task",
     "projectTitle": "To-Do List Project",
     "inputLabel": "To-do item input",
     "language": {
@@ -11,6 +12,7 @@
   },
   "tlh": {
     "add": "boq",
+    "deleteTask": "Dov'a'",
     "projectTitle": "DaytuqQo'qoq",
     "inputLabel": "'e' yIlIjQo', ghaH'e'",
     "language": {

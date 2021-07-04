@@ -1,9 +1,9 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-export default function TodoList({ tasks, dispatch }) {
+export default function TodoList({ tasks, dispatch, ...containerProps }) {
   return (
-    <>
+    <div {...containerProps}>
       {tasks
         .map(({ description, complete }, key) => (
           <TodoItem
@@ -16,6 +16,6 @@ export default function TodoList({ tasks, dispatch }) {
           </TodoItem>
         ))
         .toArray()}
-    </>
+    </div>
   );
 }

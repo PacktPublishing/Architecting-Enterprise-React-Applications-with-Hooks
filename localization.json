@@ -1,6 +1,7 @@
 {
   "en-US": {
     "add": "Add",
+    "deleteAllComplete": "Delete all completed tasks",
     "deleteTask": "Delete task",
     "projectTitle": "To-Do List Project",
     "inputLabel": "To-do item input",
@@ -12,6 +13,7 @@
   },
   "tlh": {
     "add": "boq",
+    "deleteAllComplete": "ghotvam ghotvam",
     "deleteTask": "Dov'a'",
     "projectTitle": "DaytuqQo'qoq",
     "inputLabel": "'e' yIlIjQo', ghaH'e'",

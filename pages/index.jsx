@@ -5,6 +5,7 @@ import { LocalizationContext } from "../contexts/localization";
 import LanguageSelect from "../components/LanguageSelect";
 import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
+import DeleteAllCompleteButton from "../components/DeleteAllCompleteButton";
 import todoListReducer, { initialTasks } from "../reducers/todoListReducer";
 
 export default function Home() {
@@ -20,14 +21,17 @@ export default function Home() {
 
       <LanguageSelect />
 
-      <Container fluid style={{ maxWidth: "720px" }} className="mt-5">
-        <h1 className="mb-5" style={{ textAlign: "center" }}>
-          {localizedStrings.projectTitle}
-        </h1>
+      <Container fluid style={{ maxWidth: "720px" }} className="mt-5 mb-4">
+        <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>
 
         <TodoInput dispatch={dispatch} className="mb-5" />
 
-        <TodoList tasks={tasks} dispatch={dispatch} />
+        <TodoList tasks={tasks} dispatch={dispatch} className="mb-4" />
+
+        <DeleteAllCompleteButton
+          dispatch={dispatch}
+          className="d-block mx-auto"
+        />
       </Container>
     </>
   );

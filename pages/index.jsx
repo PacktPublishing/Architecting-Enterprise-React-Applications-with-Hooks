@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useReducer } from "react";
 import Head from "next/head";
 import { Container } from "react-bootstrap";
+import { LocalizationContext } from "../contexts/localization";
 import LanguageSelect from "../components/LanguageSelect";
 import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
-import { LocalizationContext } from "../contexts/localization";
+import todoListReducer, { initialTasks } from "../reducers/todoListReducer";
 
 export default function Home() {
   const { localizedStrings } = useContext(LocalizationContext);
+
+  const [tasks, dispatch] = useReducer(todoListReducer, initialTasks);
 
   return (
     <>

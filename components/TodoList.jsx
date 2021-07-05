@@ -1,17 +1,12 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 
-export default function TodoList({ tasks, dispatch, ...containerProps }) {
+export default function TodoList({ tasks, ...containerProps }) {
   return (
     <div {...containerProps}>
       {tasks
         .map(({ description, complete }, key) => (
-          <TodoItem
-            key={key}
-            taskKey={key}
-            complete={complete}
-            dispatch={dispatch}
-          >
+          <TodoItem key={key} taskKey={key} complete={complete}>
             {description}
           </TodoItem>
         ))

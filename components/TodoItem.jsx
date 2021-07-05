@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Col, Form } from "react-bootstrap";
 import Markdown from "react-markdown";
+import TodoListDispatch from "../contexts/TodoListDispatch";
 import { TASK_ACTIONS } from "../reducers/todoListReducer";
 import DeleteButton from "./DeleteButton.jsx";
 
@@ -10,9 +11,10 @@ export default function TodoItem({
   children,
   taskKey,
   complete,
-  dispatch,
   ...checkboxProps
 }) {
+  const dispatch = useContext(TodoListDispatch);
+
   const toggleComplete = () =>
     dispatch({ type: TOGGLE_COMPLETE, key: taskKey });
   const deleteTask = () => dispatch({ type: DELETE, key: taskKey });

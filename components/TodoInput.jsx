@@ -20,7 +20,7 @@ function TodoInput({ dispatch, ...rowProps }, ref) {
     <Form.Row {...rowProps}>
       <Col>
         <Form.Control
-          aria-label={localizedStrings.todoInput.inputLabel}
+          aria-label={localizedStrings.inputLabel}
           value={description}
           onChange={(event) => setDescription(event.target.value)}
           onKeyDown={(event) => {
@@ -31,7 +31,7 @@ function TodoInput({ dispatch, ...rowProps }, ref) {
       </Col>
 
       <Col xs="auto">
-        <Button onClick={addTask}>{localizedStrings.todoInput.add}</Button>
+        <Button onClick={addTask}>{localizedStrings.add}</Button>
       </Col>
     </Form.Row>
   );

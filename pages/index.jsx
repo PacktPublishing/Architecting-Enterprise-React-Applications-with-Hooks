@@ -15,14 +15,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{localizedStrings.indexPage.projectTitle}</title>
+        <title>{localizedStrings.projectTitle}</title>
       </Head>
 
       <LanguageSelect />
 
       <Container fluid style={{ maxWidth: "720px" }} className="mt-5">
         <h1 className="mb-5" style={{ textAlign: "center" }}>
-          {localizedStrings.indexPage.projectTitle}
+          {localizedStrings.projectTitle}
         </h1>
 
         <TodoInput dispatch={dispatch} className="mb-5" />

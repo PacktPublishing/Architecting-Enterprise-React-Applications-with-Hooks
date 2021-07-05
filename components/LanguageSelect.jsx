@@ -9,7 +9,7 @@ export default function LanguageSelect() {
   return (
     <Form.Row className="m-3 justify-content-end">
       <Form.Label htmlFor="language-select" column xs="auto">
-        {localizedStrings.languageSelect.language}
+        {localizedStrings.language.label}
       </Form.Label>
 
       <Col xs="auto">
@@ -36,7 +36,7 @@ function LanguageButton({ value, ...props }) {
       style={{ width: "6rem" }}
       {...props}
     >
-      {localizedStrings.languageSelect[value]}
+      {localizedStrings.language[value]}
     </ToggleButton>
   );
 }

@@ -23,3 +23,4 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 1.15](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.15)
 - [Checkpoint 1.16](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.16/reducers/todoListReducer.js)
 - [Checkpoint 1.17](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.16..Checkpoint_1.17)
+- [Checkpoint 1.18](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.18%5E..Checkpoint_1.18)

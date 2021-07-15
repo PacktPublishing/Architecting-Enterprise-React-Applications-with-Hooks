@@ -32,7 +32,6 @@ const exec = util.promisify(require("child_process").exec);
       if (startingBranchReached === false) {
         if (branch === startingBranch) {
           startingBranchReached = true;
-          await exec("git push --force-with-lease");
           previousBranch = branch;
         }
 

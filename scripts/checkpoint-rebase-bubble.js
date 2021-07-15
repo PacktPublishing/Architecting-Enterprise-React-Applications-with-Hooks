@@ -1,6 +1,11 @@
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 
+const options = {
+  interactive:
+    process.argv.includes("--interactive") || process.argv.includes("-i"),
+};
+
 (async function () {
   try {
     const branchList = (await exec("git branch --list")).stdout;
@@ -40,7 +45,9 @@ const exec = util.promisify(require("child_process").exec);
 
       await exec(`
         git checkout ${branch};
-        git rebase --strategy-option ours ${previousBranch};
+        git rebase ${
+          options.interactive ? "--interactive " : ""
+        }--strategy-option ours ${previousBranch};
       `);
       previousBranch = branch;
     }

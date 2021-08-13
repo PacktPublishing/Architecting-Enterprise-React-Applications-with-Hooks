@@ -5,6 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint --ignore-path .gitignore .",
     "deploy": "vercel --prod",
     "rebase-bubble": "node scripts/checkpoint-rebase-bubble.mjs",
     "rename-bubble": "node scripts/checkpoint-rename-bubble.mjs"

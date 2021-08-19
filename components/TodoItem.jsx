@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { Col, Form } from "react-bootstrap";
-import Markdown from "react-markdown";
 import TodoListDispatch from "../contexts/TodoListDispatch";
 import { TASK_ACTIONS } from "../reducers/todoListReducer";
 import DeleteButton from "./DeleteButton.jsx";
@@ -54,13 +53,7 @@ export default function TodoItem({
               cursor: "pointer",
             }}
           >
-            <Markdown
-              allowedElements={["a", "code", "em", "p", "strong"]}
-              // eslint-disable-next-line react/display-name, no-unused-vars
-              components={{ p: ({ node, ...props }) => <span {...props} /> }}
-            >
-              {children}
-            </Markdown>
+            {children}
           </Form.Check.Label>
         </Form.Check>
       </Col>

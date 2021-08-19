@@ -54,6 +54,7 @@ const options = {
 
     exec("git push --all --set-upstream origin --force-with-lease");
   } catch (error) {
+    await exec("git rebase --abort");
     console.error(error.stderr);
     process.exitCode = 1;
   }

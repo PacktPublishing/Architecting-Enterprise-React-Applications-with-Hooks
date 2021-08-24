@@ -3,9 +3,7 @@ import { nanoid } from "nanoid";
 
 const Task = Record({ description: "", complete: false });
 
-export const initialTasks = OrderedMap({
-  [nanoid()]: Task({ description: "Learn how to use `useReducer`." }),
-});
+export const initialTasks = OrderedMap();
 
 export const TASK_ACTIONS = Object.freeze({
   ADD: "add",

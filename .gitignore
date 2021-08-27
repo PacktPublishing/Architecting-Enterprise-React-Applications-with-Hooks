@@ -1,4 +1,5 @@
 sandbox
+*.code-workspace
 
 # Next.js recommended .gitignore
 

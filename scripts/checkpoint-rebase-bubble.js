@@ -1,5 +1,6 @@
-const util = require("util");
-const exec = util.promisify(require("child_process").exec);
+const { Seq } = require("immutable");
+const simpleGit = require("simple-git");
+const git = simpleGit();
 
 const options = {
   interactive:
@@ -7,16 +8,20 @@ const options = {
 };
 
 (async function () {
-  try {
-    const branchList = (await exec("git branch --list")).stdout;
-    const checkpointBranches = [
-      ...branchList.matchAll(/Checkpoint_(?<chapter>\d+)\.(?<decimal>\d+)/g),
-    ].map(([name, chapter, decimal]) => ({
-      name,
-      chapter: parseInt(chapter),
-      decimal: parseInt(decimal),
-    }));
-    checkpointBranches.sort(
+  const branchSummary = await git.branch(["--list"]);
+  const checkpointBranches = Seq(branchSummary.all)
+    .filter((branch) => branch.startsWith("Checkpoint_"))
+    .map((branchName) => {
+      const { chapter, decimal } = branchName.match(
+        /Checkpoint_(?<chapter>\d+)\.(?<decimal>\d+)/
+      ).groups;
+      return {
+        name: branchName,
+        chapter: parseInt(chapter),
+        decimal: parseInt(decimal),
+      };
+    })
+    .sort(
       (
         { chapter: chapterA, decimal: decimalA },
         { chapter: chapterB, decimal: decimalB }
@@ -24,38 +29,29 @@ const options = {
         if (chapterA === chapterB) return decimalA - decimalB;
         else return chapterA - chapterB;
       }
-    );
-    const branches = [...checkpointBranches.map(({ name }) => name), "main"];
+    )
+    .map(({ name }) => name);
+  const branches = checkpointBranches.concat("main").toJS();
 
-    const startingBranch = (
-      await exec("git branch --show-current")
-    ).stdout.trimEnd();
+  const startingBranchIndex = branches.indexOf(branchSummary.current);
+  let previousBranch = branches[startingBranchIndex];
+  try {
+    for (let i = startingBranchIndex + 1; i < branches.length; i++) {
+      const currentBranch = branches[i];
 
-    let startingBranchReached = false;
-    let previousBranch = "";
-    for (const branch of branches) {
-      if (startingBranchReached === false) {
-        if (branch === startingBranch) {
-          startingBranchReached = true;
-          previousBranch = branch;
-        }
+      await git.checkout(currentBranch).rebase({
+        ...(options.interactive ? { "--interactive": null } : {}),
+        "--strategy-option": "ours",
+        [previousBranch]: null,
+      });
 
-        continue;
-      }
-
-      await exec(`
-        git checkout ${branch};
-        git rebase ${
-          options.interactive ? "--interactive " : ""
-        }--strategy-option ours ${previousBranch};
-      `);
-      previousBranch = branch;
+      previousBranch = currentBranch;
     }
 
-    exec("git push --all --set-upstream origin --force-with-lease");
+    git.push(["--all", "--set-upstream", "origin", "--force-with-lease"]);
   } catch (error) {
-    await exec("git rebase --abort");
-    console.error(error.stderr);
+    console.error(error.message);
     process.exitCode = 1;
+    await git.rebase(["--abort"]).checkout(previousBranch);
   }
 })();

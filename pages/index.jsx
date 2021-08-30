@@ -1,5 +1,4 @@
-import React, { useContext, useReducer } from "react";
-import Head from "next/head";
+import React, { useContext, useEffect, useReducer } from "react";
 import { Container } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 import LanguageSelect from "../components/LanguageSelect";
@@ -14,12 +13,13 @@ export default function Home() {
 
   const [tasks, dispatch] = useReducer(todoListReducer, initialTasks);
 
+  useEffect(() => {
+    const incompleteTaskCount = tasks.filter((task) => !task.complete).size;
+    document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
+  });
+
   return (
     <>
-      <Head>
-        <title>{localizedStrings.projectTitle}</title>
-      </Head>
-
       <LanguageSelect />
 
       <Container fluid style={{ maxWidth: "720px" }} className="mt-5 mb-4">

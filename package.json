@@ -2,7 +2,7 @@
   "name": "todo-list-project",
   "private": true,
   "scripts": {
-    "dev": "npm install && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "rebase-bubble": "node scripts/checkpoint-rebase-bubble.js"

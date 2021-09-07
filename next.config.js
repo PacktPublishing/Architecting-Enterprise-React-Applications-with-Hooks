@@ -2,6 +2,12 @@ module.exports = {
   async redirects() {
     return [
       {
+        source: "/checkpoint-1.0",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.0",
+        permanent: true,
+      },
+      {
         source: "/checkpoint-1.1",
         destination:
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.1/components/TodoInput.jsx#L5-L13",
@@ -107,6 +113,18 @@ module.exports = {
         source: "/checkpoint-1.18",
         destination:
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.18%5E..Checkpoint_1.18",
+        permanent: true,
+      },
+      {
+        source: "/checkpoint-2.0",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_2.0",
+        permanent: true,
+      },
+      {
+        source: "/checkpoint-2.1",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.1/pages/index.jsx#L16-L19",
         permanent: true,
       },
     ];

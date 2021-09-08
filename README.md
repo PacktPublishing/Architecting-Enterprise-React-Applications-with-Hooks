@@ -29,4 +29,4 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 ### Chapter 2 – Side Effects: Reaching Outside of React
 
 - [Checkpoint 2.0](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_2.0)
-- [Checkpoint 2.1](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.1/pages/index.jsx#L16-L19)
+- [Checkpoint 2.1](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.1/pages/index.jsx#L12-L24)

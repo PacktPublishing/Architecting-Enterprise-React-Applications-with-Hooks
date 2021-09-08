@@ -124,7 +124,7 @@ module.exports = {
       {
         source: "/checkpoint-2.1",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.1/pages/index.jsx#L16-L19",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.1/pages/index.jsx#L12-L24",
         permanent: true,
       },
     ];

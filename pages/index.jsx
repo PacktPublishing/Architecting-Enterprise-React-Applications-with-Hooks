@@ -9,15 +9,21 @@ import todoListReducer, { initialTasks } from "../reducers/todoListReducer";
 import TodoListDispatch from "../contexts/TodoListDispatch";
 
 export default function Home() {
+  console.log("Starting render");
   const { localizedStrings } = useContext(LocalizationContext);
 
   const [tasks, dispatch] = useReducer(todoListReducer, initialTasks);
 
   useEffect(() => {
+    console.log("Starting page title effect");
+
     const incompleteTaskCount = tasks.filter((task) => !task.complete).size;
     document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
+
+    console.log("Ending page title effect");
   });
 
+  console.log("Ending render");
   return (
     <>
       <LanguageSelect />

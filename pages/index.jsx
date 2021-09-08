@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useReducer } from "react";
-import { Container } from "react-bootstrap";
+import React, { useContext, useEffect, useReducer, useState } from "react";
+import { Container, Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 import LanguageSelect from "../components/LanguageSelect";
 import TodoInput from "../components/TodoInput";
@@ -23,10 +23,22 @@ export default function Home() {
     console.log("Ending page title effect");
   });
 
+  const [switchState, setSwitchState] = useState(false);
+
   console.log("Ending render");
   return (
     <>
       <LanguageSelect />
+
+      <div className="text-center">
+        <Form.Check
+          type="switch"
+          id="meaningless-switch"
+          label="Meaningless switch"
+          checked={switchState}
+          onChange={() => setSwitchState((s) => !s)}
+        />
+      </div>
 
       <Container fluid style={{ maxWidth: "720px" }} className="mt-5 mb-4">
         <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>

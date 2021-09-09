@@ -21,7 +21,7 @@ export default function Home() {
     document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
 
     console.log("Ending page title effect");
-  });
+  }, [tasks]);
 
   const [switchState, setSwitchState] = useState(false);
 

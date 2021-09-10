@@ -12,7 +12,9 @@ export default function Home() {
   console.log("Starting render");
   const { localizedStrings } = useContext(LocalizationContext);
 
-  const [tasks, dispatch] = useReducer(todoListReducer, initialTasks);
+  // const [tasks, dispatch] = useReducer(todoListReducer, initialTasks);
+  const tasks = [];
+  const dispatch = () => {};
 
   useEffect(() => {
     console.log("Starting page title effect");

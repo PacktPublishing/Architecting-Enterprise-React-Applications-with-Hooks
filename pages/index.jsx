@@ -12,11 +12,8 @@ export default function Home() {
   console.log("Starting render");
   const { localizedStrings } = useContext(LocalizationContext);
 
-  // const [tasks, dispatch] = useReducer(todoListReducer, initialTasks);
-  const tasks = [];
-  const dispatch = () => {};
+  const [tasks, dispatch] = useReducer(todoListReducer, initialTasks);
 
-  const incompleteTaskCount = tasks.filter((task) => !task.complete).length;
   useEffect(() => {
     console.log("Starting page title effect");
 
@@ -24,7 +21,7 @@ export default function Home() {
     document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
 
     console.log("Ending page title effect");
-  }, [incompleteTaskCount]);
+  }, [tasks]);
 
   const [switchState, setSwitchState] = useState(false);
 

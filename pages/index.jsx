@@ -16,6 +16,7 @@ export default function Home() {
   const tasks = [];
   const dispatch = () => {};
 
+  const incompleteTaskCount = tasks.filter((task) => !task.complete).length;
   useEffect(() => {
     console.log("Starting page title effect");
 
@@ -23,7 +24,7 @@ export default function Home() {
     document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
 
     console.log("Ending page title effect");
-  }, [tasks]);
+  }, [incompleteTaskCount]);
 
   const [switchState, setSwitchState] = useState(false);
 

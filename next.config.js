@@ -1,6 +1,6 @@
 module.exports = {
   eslint: {
-    dirs: ["components", "contexts", "pages", "reducers", "scripts"],
+    dirs: ["components", "contexts", "models", "pages", "scripts"],
   },
   async redirects() {
     return [

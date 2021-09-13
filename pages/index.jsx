@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useReducer, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import { Container, Form } from "react-bootstrap";
+import { subscribeToTaskList } from "../models/database";
 import { LocalizationContext } from "../contexts/localization";
 import LanguageSelect from "../components/LanguageSelect";
 import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
 import DeleteAllCompletedButton from "../components/DeleteAllCompletedButton";
-import todoListReducer, { initialTasks } from "../reducers/todoListReducer";
-import TodoListDispatch from "../contexts/TodoListDispatch";
 
 let renderCount = 0;
 
@@ -16,16 +15,16 @@ export default function Home() {
 
   const { localizedStrings } = useContext(LocalizationContext);
 
-  const [tasks, dispatch] = useReducer(todoListReducer, initialTasks);
+  const [switchState, setSwitchState] = useState(false);
+
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     console.log("Running page title effect");
 
-    const incompleteTaskCount = tasks.filter((task) => !task.completed).size;
+    const incompleteTaskCount = tasks.filter((task) => !task.completed).length;
     document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
   }, [tasks, localizedStrings.projectTitle]);
-
-  const [switchState, setSwitchState] = useState(false);
 
   return (
     <>
@@ -47,13 +46,9 @@ export default function Home() {
       <Container fluid style={{ maxWidth: "720px" }} className="mt-5 mb-4">
         <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>
 
-        <TodoListDispatch.Provider value={dispatch}>
-          <TodoInput className="mb-5" />
-
-          <TodoList tasks={tasks} className="mb-4" />
-
-          <DeleteAllCompletedButton className="d-block mx-auto" />
-        </TodoListDispatch.Provider>
+        <TodoInput className="mb-5" />
+        <TodoList tasks={tasks} className="mb-4" />
+        <DeleteAllCompletedButton className="d-block mx-auto" />
       </Container>
     </>
   );

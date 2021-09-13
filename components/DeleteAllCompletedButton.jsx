@@ -1,22 +1,13 @@
 import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
-import TodoListDispatch from "../contexts/TodoListDispatch";
-import { TASK_ACTIONS } from "../reducers/todoListReducer";
-
-const { DELETE_ALL_COMPLETED } = TASK_ACTIONS;
+import { deleteAllCompletedTasks } from "../models/database";
 
 export default function DeleteAllCompletedButton(props) {
   const { localizedStrings } = useContext(LocalizationContext);
 
-  const dispatch = useContext(TodoListDispatch);
-
   return (
-    <Button
-      variant="danger"
-      onClick={() => dispatch({ type: DELETE_ALL_COMPLETED })}
-      {...props}
-    >
+    <Button variant="danger" onClick={deleteAllCompletedTasks} {...props}>
       {localizedStrings.deleteAllCompleted}
     </Button>
   );

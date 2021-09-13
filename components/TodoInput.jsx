@@ -1,19 +1,15 @@
 import React, { forwardRef, useContext, useState } from "react";
 import { Col, Button, Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
-import TodoListDispatch from "../contexts/TodoListDispatch";
-import { TASK_ACTIONS } from "../reducers/todoListReducer";
-
-const { ADD } = TASK_ACTIONS;
+import { addTask as dbAddTask } from "../models/database";
 
 function TodoInput(props, ref) {
   const { localizedStrings } = useContext(LocalizationContext);
-  const dispatch = useContext(TodoListDispatch);
 
   const [description, setDescription] = useState("");
-  function addTask() {
+  async function addTask() {
     if (description !== "") {
-      dispatch({ type: ADD, description });
+      await dbAddTask(description);
       setDescription("");
     }
   }

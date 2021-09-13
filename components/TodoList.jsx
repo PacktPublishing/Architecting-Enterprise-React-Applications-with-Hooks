@@ -4,13 +4,11 @@ import TodoItem from "./TodoItem";
 export default function TodoList({ tasks, ...containerProps }) {
   return (
     <div {...containerProps}>
-      {tasks
-        .map(({ description, completed }, key) => (
-          <TodoItem key={key} taskKey={key} completed={completed}>
-            {description}
-          </TodoItem>
-        ))
-        .toArray()}
+      {tasks.map(({ id, description, completed }) => (
+        <TodoItem key={id} taskId={id} completed={completed}>
+          {description}
+        </TodoItem>
+      ))}
     </div>
   );
 }

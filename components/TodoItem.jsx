@@ -1,22 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Col, Form } from "react-bootstrap";
-import TodoListDispatch from "../contexts/TodoListDispatch";
-import { TASK_ACTIONS } from "../reducers/todoListReducer";
+import {
+  deleteTask as dbDeleteTask,
+  toggleTaskCompleted as dbToggleTaskCompleted,
+} from "../models/database";
 import DeleteButton from "./DeleteButton.jsx";
-
-const { TOGGLE_COMPLETED, DELETE } = TASK_ACTIONS;
 
 export default function TodoItem({
   children,
-  taskKey,
+  taskId,
   completed,
   ...checkboxProps
 }) {
-  const dispatch = useContext(TodoListDispatch);
-
-  const toggleCompleted = () =>
-    dispatch({ type: TOGGLE_COMPLETED, key: taskKey });
-  const deleteTask = () => dispatch({ type: DELETE, key: taskKey });
+  const toggleCompleted = async () =>
+    await dbToggleTaskCompleted(taskId, completed);
+  const deleteTask = async () => await dbDeleteTask(taskId);
 
   const [focused, setFocused] = useState(false);
   const handleFocus = () => setFocused(true);
@@ -37,7 +35,7 @@ export default function TodoItem({
           {...checkboxProps}
           custom
           type="checkbox"
-          id={`task-${taskKey}`}
+          id={`task-${taskId}`}
         >
           <Form.Check.Input
             type="checkbox"

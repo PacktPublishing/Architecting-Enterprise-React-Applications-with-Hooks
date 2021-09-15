@@ -4,9 +4,9 @@ import { LocalizationContext } from "../contexts/localization";
 import TodoListDispatch from "../contexts/TodoListDispatch";
 import { TASK_ACTIONS } from "../reducers/todoListReducer";
 
-const { DELETE_ALL_COMPLETE } = TASK_ACTIONS;
+const { DELETE_ALL_COMPLETED } = TASK_ACTIONS;
 
-export default function DeleteAllCompleteButton(props) {
+export default function DeleteAllCompletedButton(props) {
   const { localizedStrings } = useContext(LocalizationContext);
 
   const dispatch = useContext(TodoListDispatch);
@@ -14,10 +14,10 @@ export default function DeleteAllCompleteButton(props) {
   return (
     <Button
       variant="danger"
-      onClick={() => dispatch({ type: DELETE_ALL_COMPLETE })}
+      onClick={() => dispatch({ type: DELETE_ALL_COMPLETED })}
       {...props}
     >
-      {localizedStrings.deleteAllComplete}
+      {localizedStrings.deleteAllCompleted}
     </Button>
   );
 }

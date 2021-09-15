@@ -4,18 +4,18 @@ import TodoListDispatch from "../contexts/TodoListDispatch";
 import { TASK_ACTIONS } from "../reducers/todoListReducer";
 import DeleteButton from "./DeleteButton.jsx";
 
-const { TOGGLE_COMPLETE, DELETE } = TASK_ACTIONS;
+const { TOGGLE_COMPLETED, DELETE } = TASK_ACTIONS;
 
 export default function TodoItem({
   children,
   taskKey,
-  complete,
+  completed,
   ...checkboxProps
 }) {
   const dispatch = useContext(TodoListDispatch);
 
-  const toggleComplete = () =>
-    dispatch({ type: TOGGLE_COMPLETE, key: taskKey });
+  const toggleCompleted = () =>
+    dispatch({ type: TOGGLE_COMPLETED, key: taskKey });
   const deleteTask = () => dispatch({ type: DELETE, key: taskKey });
 
   const [focused, setFocused] = useState(false);
@@ -41,15 +41,15 @@ export default function TodoItem({
         >
           <Form.Check.Input
             type="checkbox"
-            checked={complete}
-            onChange={toggleComplete}
+            checked={completed}
+            onChange={toggleCompleted}
             style={{ cursor: "pointer" }}
             onFocus={handleFocus}
             onBlur={handleBlur}
           />
           <Form.Check.Label
             style={{
-              textDecoration: complete ? "line-through" : "none",
+              textDecoration: completed ? "line-through" : "none",
               cursor: "pointer",
             }}
           >

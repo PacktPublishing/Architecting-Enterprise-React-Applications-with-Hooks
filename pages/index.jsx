@@ -5,7 +5,7 @@ import { LocalizationContext } from "../contexts/localization";
 import LanguageSelect from "../components/LanguageSelect";
 import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
-import DeleteAllCompleteButton from "../components/DeleteAllCompleteButton";
+import DeleteAllCompletedButton from "../components/DeleteAllCompletedButton";
 import todoListReducer, { initialTasks } from "../reducers/todoListReducer";
 import TodoListDispatch from "../contexts/TodoListDispatch";
 
@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     console.log("Running page title effect");
 
-    const incompleteTaskCount = tasks.filter((task) => !task.complete).size;
+    const incompleteTaskCount = tasks.filter((task) => !task.completed).size;
     document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
   }, [tasks, localizedStrings.projectTitle]);
 
@@ -52,7 +52,7 @@ export default function Home() {
 
           <TodoList tasks={tasks} className="mb-4" />
 
-          <DeleteAllCompleteButton className="d-block mx-auto" />
+          <DeleteAllCompletedButton className="d-block mx-auto" />
         </TodoListDispatch.Provider>
       </Container>
     </>

@@ -20,6 +20,19 @@ export default function Home() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
+    console.log("Running database effect");
+    const renderNumber = renderCount;
+
+    function onDatabaseUpdate(newTasks) {
+      console.log(
+        `Calling the \`onDatabaseUpdate\` defined after render #${renderNumber}`
+      );
+      setTasks(newTasks);
+    }
+    const unsubscribe = subscribeToTaskList(onDatabaseUpdate);
+  }, []);
+
+  useEffect(() => {
     console.log("Running page title effect");
 
     const incompleteTaskCount = tasks.filter((task) => !task.completed).length;

@@ -30,6 +30,11 @@ export default function Home() {
       setTasks(newTasks);
     }
     const unsubscribe = subscribeToTaskList(onDatabaseUpdate);
+
+    return function cleanup() {
+      console.log(`Cleaning up database effect from render #${renderNumber}`);
+      unsubscribe();
+    };
   }, []);
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useReducer, useState } from "react";
+import Link from "next/link";
 import { Container, Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 import LanguageSelect from "../components/LanguageSelect";
@@ -31,6 +32,9 @@ export default function Home() {
       <LanguageSelect />
 
       <div className="text-center">
+        <Link href="/about">
+          <a className="d-inline-block mb-3">About page link</a>
+        </Link>
         <Form.Check
           type="switch"
           id="meaningless-switch"

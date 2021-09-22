@@ -33,3 +33,4 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 2.2](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.2/pages/index.jsx#L24-L39)
 - [Checkpoint 2.3](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_2.3%5E...Checkpoint_2.3?diff=split)
 - [Checkpoint 2.4](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_2.4%5E..Checkpoint_2.4)
+- [Checkpoint 2.5](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.5/components/TodoInput.jsx)

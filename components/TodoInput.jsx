@@ -1,7 +1,11 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { Col, Button, Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
-import { addTask as dbAddTask } from "../models/database";
+import {
+  addTask as dbAddTask,
+  saveInputValue,
+  getSavedInputValue,
+} from "../models/database";
 
 export default function TodoInput(props) {
   const { localizedStrings } = useContext(LocalizationContext);

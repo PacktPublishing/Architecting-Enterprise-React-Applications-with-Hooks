@@ -8,36 +8,23 @@ import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
 import DeleteAllCompletedButton from "../components/DeleteAllCompletedButton";
 
-let renderCount = 0;
-
 export default function Home() {
-  console.log(`Render #${++renderCount}`);
-
   const { localizedStrings } = useContext(LocalizationContext);
 
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    console.log("Running database effect");
-    const renderNumber = renderCount;
-
     function onDatabaseUpdate(newTasks) {
-      console.log(
-        `Calling the \`onDatabaseUpdate\` defined after render #${renderNumber}`
-      );
       setTasks(newTasks);
     }
     const unsubscribe = subscribeToTaskList(onDatabaseUpdate);
 
     return function cleanup() {
-      console.log(`Cleaning up database effect from render #${renderNumber}`);
       unsubscribe();
     };
   }, []);
 
   useEffect(() => {
-    console.log("Running page title effect");
-
     const incompleteTaskCount = tasks.filter((task) => !task.completed).length;
     document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
   }, [tasks, localizedStrings.projectTitle]);

@@ -1,16 +1,17 @@
-import React, { forwardRef, useContext, useState } from "react";
+import React, { useContext, useRef } from "react";
 import { Col, Button, Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 import { addTask as dbAddTask } from "../models/database";
 
-function TodoInput(props, ref) {
+export default function TodoInput(props) {
   const { localizedStrings } = useContext(LocalizationContext);
 
-  const [description, setDescription] = useState("");
+  const inputRef = useRef(null);
+
   async function addTask() {
-    if (description !== "") {
-      await dbAddTask(description);
-      setDescription("");
+    if (inputRef.current.value !== "") {
+      await dbAddTask(inputRef.current.value);
+      inputRef.current.value = "";
     }
   }
 
@@ -19,12 +20,10 @@ function TodoInput(props, ref) {
       <Col>
         <Form.Control
           aria-label={localizedStrings.inputLabel}
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
+          ref={inputRef}
           onKeyDown={(event) => {
             if (event.key === "Enter") addTask();
           }}
-          ref={ref}
         />
       </Col>
 
@@ -34,4 +33,3 @@ function TodoInput(props, ref) {
     </Form.Row>
   );
 }
-export default forwardRef(TodoInput);

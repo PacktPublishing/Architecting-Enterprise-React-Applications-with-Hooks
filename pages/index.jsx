@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { subscribeToTaskList } from "../models/database";
 import { LocalizationContext } from "../contexts/localization";
@@ -32,12 +31,6 @@ export default function Home() {
   return (
     <>
       <LanguageSelect />
-
-      <div className="text-center">
-        <Link href="/about">
-          <a className="d-inline-block mb-3">About page link</a>
-        </Link>
-      </div>
 
       <Container fluid style={{ maxWidth: "720px" }} className="mt-5 mb-4">
         <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>

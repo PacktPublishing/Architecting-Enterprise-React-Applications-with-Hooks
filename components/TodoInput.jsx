@@ -13,7 +13,6 @@ export default function TodoInput(props) {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    console.log("Running effect");
     const inputElement = inputRef.current;
 
     (async function () {
@@ -28,7 +27,6 @@ export default function TodoInput(props) {
     }
     window.addEventListener("beforeunload", saveInput);
     return function cleanup() {
-      console.log("Running cleanup");
       saveInput();
       window.removeEventListener("beforeunload", saveInput);
     };

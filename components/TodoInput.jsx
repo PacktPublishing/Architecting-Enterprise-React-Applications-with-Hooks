@@ -12,6 +12,26 @@ export default function TodoInput(props) {
 
   const inputRef = useRef(null);
 
+  useEffect(async () => {
+    console.log("Running effect");
+    const inputElement = inputRef.current;
+
+    const savedInputValue = await getSavedInputValue();
+    if (savedInputValue) {
+      inputElement.value = savedInputValue;
+    }
+
+    function saveInput() {
+      if (inputElement.value) saveInputValue(inputElement.value);
+    }
+    window.addEventListener("beforeunload", saveInput);
+    return function cleanup() {
+      console.log("Running cleanup");
+      saveInput();
+      window.removeEventListener("beforeunload", saveInput);
+    };
+  }, []);
+
   async function addTask() {
     if (inputRef.current.value !== "") {
       await dbAddTask(inputRef.current.value);

@@ -151,6 +151,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.5/components/TodoInput.jsx",
         permanent: true,
       },
+      {
+        source: "/checkpoint-2.6",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.6/pages/_app.jsx",
+        permanent: true,
+      },
     ];
   },
 };

@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useLayoutEffect, useState } from "react";
 import localization from "../localization.json";
 
 const supportedLocales = Object.keys(localization);
@@ -8,7 +8,7 @@ export const LocalizationContext = createContext();
 export function LocalizationProvider({ children }) {
   const [locale, setLocale] = useState("tlh");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const userLocales = (navigator?.languages ?? [navigator?.language]).filter(
       (language) => language != null
     );

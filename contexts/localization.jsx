@@ -1,11 +1,12 @@
 import React, { createContext, useLayoutEffect, useState } from "react";
+import clientSideOnly from "../components/hoc/clientSideOnly";
 import localization from "../localization.json";
 
 const supportedLocales = Object.keys(localization);
 
 export const LocalizationContext = createContext();
 
-export function LocalizationProvider({ children }) {
+export const LocalizationProvider = clientSideOnly(({ children }) => {
   const [locale, setLocale] = useState("tlh");
 
   useLayoutEffect(() => {
@@ -37,4 +38,4 @@ export function LocalizationProvider({ children }) {
       {children}
     </LocalizationContext.Provider>
   );
-}
+});

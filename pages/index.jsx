@@ -10,8 +10,12 @@ import DeleteAllCompletedButton from "../components/DeleteAllCompletedButton";
 export default function Home() {
   const { localizedStrings } = useContext(LocalizationContext);
 
-  const [tasks, setTasks] = useState([]);
-
+  const [{ tasks, dbConnected }, setTasksDbState] = useState({
+    tasks: [],
+    dbConnected: false,
+  });
+  const setTasks = (newTasks) =>
+    setTasksDbState({ tasks: newTasks, dbConnected: true });
   useEffect(() => {
     function onDatabaseUpdate(newTasks) {
       setTasks(newTasks);
@@ -29,16 +33,18 @@ export default function Home() {
   }, [tasks, localizedStrings.projectTitle]);
 
   return (
-    <>
-      <LanguageSelect />
+    dbConnected && (
+      <>
+        <LanguageSelect />
 
-      <Container fluid style={{ maxWidth: "720px" }} className="mt-5 mb-4">
-        <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>
+        <Container fluid style={{ maxWidth: "720px" }} className="mt-5 mb-4">
+          <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>
 
-        <TodoInput className="mb-5" />
-        <TodoList tasks={tasks} className="mb-4" />
-        <DeleteAllCompletedButton className="d-block mx-auto" />
-      </Container>
-    </>
+          <TodoInput className="mb-5" />
+          <TodoList tasks={tasks} className="mb-4" />
+          <DeleteAllCompletedButton className="d-block mx-auto" />
+        </Container>
+      </>
+    )
   );
 }

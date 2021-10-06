@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import anime from "animejs";
 import TodoItem from "./TodoItem";
 
@@ -7,8 +7,10 @@ let renderNumber = 0;
 export default function TodoList({ tasks, ...containerProps }) {
   console.log(`Starting TodoList render #${++renderNumber}`);
 
+  const container = useRef(null);
+
   return (
-    <div {...containerProps}>
+    <div ref={container} {...containerProps}>
       {tasks.map(({ id, description, completed }) => (
         <TodoItem key={id} taskId={id} completed={completed}>
           {description}

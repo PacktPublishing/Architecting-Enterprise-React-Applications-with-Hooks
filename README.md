@@ -39,3 +39,4 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 2.8](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_2.8%5E..Checkpoint_2.8)
 - [Checkpoint 2.9](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_2.9%5E..Checkpoint_2.9)
 - [Checkpoint 2.10](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.10/pages/index.jsx)
+- [Checkpoint 2.11](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.11/pages/index.jsx)

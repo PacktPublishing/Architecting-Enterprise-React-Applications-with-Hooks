@@ -181,6 +181,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.10/pages/index.jsx",
         permanent: true,
       },
+      {
+        source: "/checkpoint-2.11",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.11/pages/index.jsx",
+        permanent: true,
+      },
     ];
   },
 };

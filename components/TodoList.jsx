@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import anime from "animejs";
 import TodoItem from "./TodoItem";
 
@@ -14,6 +14,18 @@ export default function TodoList({ tasks, ...containerProps }) {
   };
   const allTasksCompleted = tasks.every((task) => task.completed);
   const allTasksPrevCompleted = useRef(null);
+  useLayoutEffect(() => {
+    console.log(`Running effect defined in render #${renderNumber}`);
+
+    if (allTasksPrevCompleted.current === false && allTasksCompleted) {
+      startWiggleAnimation(
+        container.current.children,
+        lastCompletedIndex.current
+      );
+    }
+
+    allTasksPrevCompleted.current = allTasksCompleted;
+  }, [allTasksCompleted]);
 
   return (
     <div ref={container} {...containerProps}>

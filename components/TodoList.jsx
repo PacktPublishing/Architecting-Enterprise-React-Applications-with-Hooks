@@ -8,11 +8,20 @@ export default function TodoList({ tasks, ...containerProps }) {
   console.log(`Starting TodoList render #${++renderNumber}`);
 
   const container = useRef(null);
+  const lastCompletedIndex = useRef(null);
+  const setLastCompletedIndex = (index) => {
+    lastCompletedIndex.current = index;
+  };
 
   return (
     <div ref={container} {...containerProps}>
-      {tasks.map(({ id, description, completed }) => (
-        <TodoItem key={id} taskId={id} completed={completed}>
+      {tasks.map(({ id, description, completed }, index) => (
+        <TodoItem
+          key={id}
+          taskId={id}
+          completed={completed}
+          onTaskCompletion={() => setLastCompletedIndex(index)}
+        >
           {description}
         </TodoItem>
       ))}

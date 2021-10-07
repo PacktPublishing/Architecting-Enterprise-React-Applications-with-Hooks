@@ -10,10 +10,14 @@ export default function TodoItem({
   children,
   taskId,
   completed,
+  onTaskCompletion,
   ...checkboxProps
 }) {
-  const toggleCompleted = async () =>
-    await dbToggleTaskCompleted(taskId, completed);
+  async function toggleCompleted() {
+    const prevCompleted = completed;
+    await dbToggleTaskCompleted(taskId, prevCompleted);
+    if (!prevCompleted) onTaskCompletion();
+  }
   const deleteTask = async () => await dbDeleteTask(taskId);
 
   const [focused, setFocused] = useState(false);

@@ -12,6 +12,8 @@ export default function TodoList({ tasks, ...containerProps }) {
   const setLastCompletedIndex = (index) => {
     lastCompletedIndex.current = index;
   };
+  const allTasksCompleted = tasks.every((task) => task.completed);
+  const allTasksPrevCompleted = useRef(null);
 
   return (
     <div ref={container} {...containerProps}>

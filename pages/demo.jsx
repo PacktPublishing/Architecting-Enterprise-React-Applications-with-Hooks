@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import RandomBox from "../components/RandomBox";
 import computeExpensiveValue from "../utils/computeExpensiveValue";
 
@@ -9,7 +9,7 @@ export default function Demo() {
   const incrementCount = () => setCount((prevCount) => prevCount + 1);
 
   const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 });
-  useEffect(() => {
+  useLayoutEffect(() => {
     const newPosition = computeExpensiveValue({
       x: randomBox.current.offsetWidth / 2,
       y: randomBox.current.offsetHeight / 2,

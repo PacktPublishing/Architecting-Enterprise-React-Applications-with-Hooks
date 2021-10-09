@@ -1,5 +1,11 @@
 import React, { useContext } from "react";
-import { Col, Form, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
+import {
+  Col,
+  Form,
+  Row,
+  ToggleButton,
+  ToggleButtonGroup,
+} from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 
 export default function LanguageSelect() {
@@ -7,7 +13,7 @@ export default function LanguageSelect() {
     useContext(LocalizationContext);
 
   return (
-    <Form.Row className="m-3 justify-content-end">
+    <Row className="m-3 justify-content-end">
       <Form.Label htmlFor="language-select" column xs="auto">
         {localizedStrings.language.label}
       </Form.Label>
@@ -23,7 +29,7 @@ export default function LanguageSelect() {
           <LanguageButton value="tlh" />
         </ToggleButtonGroup>
       </Col>
-    </Form.Row>
+    </Row>
   );
 }
 
@@ -31,6 +37,7 @@ function LanguageButton({ value, ...props }) {
   const { localizedStrings } = useContext(LocalizationContext);
   return (
     <ToggleButton
+      id={`language-select-${value}`}
       value={value}
       variant="outline-primary"
       style={{ width: "6rem" }}

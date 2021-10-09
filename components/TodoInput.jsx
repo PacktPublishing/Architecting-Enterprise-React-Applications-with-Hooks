@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { Col, Button, Form } from "react-bootstrap";
+import { Col, Button, Form, Row } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 import {
   addTask as dbAddTask,
@@ -40,7 +40,7 @@ export default function TodoInput(props) {
   }
 
   return (
-    <Form.Row {...props}>
+    <Row {...props}>
       <Col>
         <Form.Control
           aria-label={localizedStrings.inputLabel}
@@ -54,6 +54,6 @@ export default function TodoInput(props) {
       <Col xs="auto">
         <Button onClick={addTask}>{localizedStrings.add}</Button>
       </Col>
-    </Form.Row>
+    </Row>
   );
 }

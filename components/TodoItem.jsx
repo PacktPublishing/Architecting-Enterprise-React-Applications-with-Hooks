@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 import {
   deleteTask as dbDeleteTask,
   toggleTaskCompleted as dbToggleTaskCompleted,
@@ -28,7 +28,7 @@ export default function TodoItem({
   const handleMouseLeave = () => setHovered(false);
 
   return (
-    <Form.Row
+    <Row
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className="align-items-center"
@@ -37,7 +37,7 @@ export default function TodoItem({
       <Col>
         <Form.Check
           {...checkboxProps}
-          custom
+          label
           type="checkbox"
           id={`task-${taskId}`}
         >
@@ -63,6 +63,6 @@ export default function TodoItem({
       <Col xs="auto" style={{ paddingRight: 0 }}>
         <DeleteButton visible={focused || hovered} onClick={deleteTask} />
       </Col>
-    </Form.Row>
+    </Row>
   );
 }

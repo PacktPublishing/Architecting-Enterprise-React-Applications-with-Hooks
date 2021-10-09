@@ -10,10 +10,10 @@ export default function Demo() {
 
   const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 });
   useEffect(() => {
-    const newPosition = {
+    const newPosition = computeExpensiveValue({
       x: randomBox.current.offsetWidth / 2,
       y: randomBox.current.offsetHeight / 2,
-    };
+    });
     setCirclePosition(newPosition);
   }, [count]);
 

@@ -178,19 +178,25 @@ module.exports = {
       {
         source: "/checkpoint-2.10",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.10/pages/index.jsx",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.10/pages/demo.jsx",
         permanent: true,
       },
       {
         source: "/checkpoint-2.11",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.11/components/TodoList.jsx",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.11/pages/index.jsx",
         permanent: true,
       },
       {
         source: "/checkpoint-2.12",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_2.11..Checkpoint_2.12",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.12/components/TodoList.jsx",
+        permanent: true,
+      },
+      {
+        source: "/checkpoint-2.13",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_2.12..Checkpoint_2.13",
         permanent: true,
       },
     ];

@@ -42,3 +42,5 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 2.11](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.11/pages/index.jsx)
 - [Checkpoint 2.12](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.12/components/TodoList.jsx)
 - [Checkpoint 2.13](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_2.12..Checkpoint_2.13)
+
+### Chapter 3: Optimization and Debugging

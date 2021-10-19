@@ -4,7 +4,7 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 
 ## List of code checkpoints
 
-### Chapter 1 – State: Remembering the Past
+### Chapter 1: State – Remembering the Past
 
 - [Checkpoint 1.0](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.0)
 - [Checkpoint 1.1](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.1/components/TodoInput.jsx#L5-L13)
@@ -26,7 +26,7 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 1.17](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.16..Checkpoint_1.17)
 - [Checkpoint 1.18](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.18%5E..Checkpoint_1.18)
 
-### Chapter 2 – Side Effects: Reaching Outside of React
+### Chapter 2: Side Effects – Reaching Outside of React
 
 - [Checkpoint 2.0](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_2.0)
 - [Checkpoint 2.1](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.1/pages/index.jsx#L12-L24)

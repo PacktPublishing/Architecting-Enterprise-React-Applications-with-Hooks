@@ -27,10 +27,10 @@ export default function Home() {
     };
   }, []);
 
+  const incompleteTaskCount = tasks.filter((task) => !task.completed).length;
   useEffect(() => {
-    const incompleteTaskCount = tasks.filter((task) => !task.completed).length;
     document.title = `(${incompleteTaskCount}) ${localizedStrings.projectTitle}`;
-  }, [tasks, localizedStrings.projectTitle]);
+  }, [incompleteTaskCount, localizedStrings.projectTitle]);
 
   return (
     dbConnected && (

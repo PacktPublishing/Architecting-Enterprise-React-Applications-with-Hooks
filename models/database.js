@@ -6,9 +6,8 @@ const TRUE = 1;
 
 const db = new Dexie("TodoList");
 
-db.version(2).stores({
+db.version(3).stores({
   tasks: "++id, description, completed",
-  input: "",
 });
 
 export default db;
@@ -38,15 +37,3 @@ export function subscribeToTaskList(onUpdate) {
 
 export const deleteAllCompletedTasks = async () =>
   await db.tasks.where("completed").equals(TRUE).delete();
-
-const SAVED_VALUE = "savedValue";
-
-export const saveInputValue = async (value) =>
-  await db.input.put({ value }, SAVED_VALUE);
-
-export const getSavedInputValue = async () =>
-  await db.transaction("rw", db.input, async () => {
-    const savedValue = (await db.input.get(SAVED_VALUE))?.value;
-    await db.input.delete(SAVED_VALUE);
-    return savedValue;
-  });

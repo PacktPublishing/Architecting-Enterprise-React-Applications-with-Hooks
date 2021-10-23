@@ -1,29 +1,26 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useLayoutEffect, useRef } from "react";
 import { Col, Button, Form, Row } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
-import {
-  addTask as dbAddTask,
-  saveInputValue,
-  getSavedInputValue,
-} from "../models/database";
+import { addTask as dbAddTask } from "../models/database";
+import { SAVED_INPUT } from "../models/localStorage-keys";
 
 export default function TodoInput(props) {
   const { localizedStrings } = useContext(LocalizationContext);
 
   const inputRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const inputElement = inputRef.current;
 
-    (async function () {
-      const savedInputValue = await getSavedInputValue();
-      if (savedInputValue) {
-        inputElement.value = savedInputValue;
-      }
-    })();
+    const savedInputValue = localStorage.getItem(SAVED_INPUT);
+    if (savedInputValue) {
+      inputElement.value = savedInputValue;
+      localStorage.removeItem(SAVED_INPUT);
+    }
 
     function saveInput() {
-      if (inputElement.value) saveInputValue(inputElement.value);
+      if (inputElement.value)
+        localStorage.setItem(SAVED_INPUT, inputElement.value);
     }
     window.addEventListener("beforeunload", saveInput);
     return function cleanup() {

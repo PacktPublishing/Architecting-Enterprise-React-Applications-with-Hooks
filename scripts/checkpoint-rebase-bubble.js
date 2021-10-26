@@ -41,7 +41,6 @@ const options = {
 
       await git.checkout(currentBranch).rebase({
         ...(options.interactive ? { "--interactive": null } : {}),
-        "--strategy-option": "ours",
         [previousBranch]: null,
       });
 

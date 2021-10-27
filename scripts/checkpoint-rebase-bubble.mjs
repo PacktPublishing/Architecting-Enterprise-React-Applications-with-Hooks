@@ -1,5 +1,5 @@
-import { Seq } from "immutable";
 import simpleGit from "simple-git";
+import { getCheckpointBranches } from "./lib.mjs";
 
 const git = simpleGit();
 
@@ -9,36 +9,16 @@ const options = {
 };
 
 (async function () {
-  const branchSummary = await git.branch(["--list"]);
-  const checkpointBranches = Seq(branchSummary.all)
-    .filter((branch) => branch.startsWith("Checkpoint_"))
-    .map((branchName) => {
-      const { chapter, decimal } = branchName.match(
-        /Checkpoint_(?<chapter>\d+)\.(?<decimal>\d+)/
-      ).groups;
-      return {
-        name: branchName,
-        chapter: parseInt(chapter),
-        decimal: parseInt(decimal),
-      };
-    })
-    .sort(
-      (
-        { chapter: chapterA, decimal: decimalA },
-        { chapter: chapterB, decimal: decimalB }
-      ) => {
-        if (chapterA === chapterB) return decimalA - decimalB;
-        else return chapterA - chapterB;
-      }
-    )
-    .map(({ name }) => name);
-  const branches = checkpointBranches.concat("main").toJS();
-
-  const startingBranchIndex = branches.indexOf(branchSummary.current);
-  let previousBranch = branches[startingBranchIndex];
+  let previousBranch;
   try {
-    for (let i = startingBranchIndex + 1; i < branches.length; i++) {
-      const currentBranch = branches[i];
+    const { branches, currentBranch: startingBranch } =
+      await getCheckpointBranches(git);
+    const branchNames = branches.map((branch) => branch.name);
+
+    const startingBranchIndex = branchNames.indexOf(startingBranch.name);
+    previousBranch = branchNames[startingBranchIndex];
+    for (let i = startingBranchIndex + 1; i < branchNames.length; i++) {
+      const currentBranch = branchNames[i];
 
       await git.checkout(currentBranch).rebase({
         ...(options.interactive ? { "--interactive": null } : {}),

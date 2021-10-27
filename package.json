@@ -19,8 +19,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "immutable": "^3.8.2",
+    "immutable": "^4.0.0",
     "prettier": "^2.3.1",
-    "simple-git": "^2.45.0"
+    "simple-git": "^2.47.0"
   }
 }

@@ -1,5 +1,6 @@
-const { Seq } = require("immutable");
-const simpleGit = require("simple-git");
+import { Seq } from "immutable";
+import simpleGit from "simple-git";
+
 const git = simpleGit();
 
 const options = {

@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "rebase-bubble": "node scripts/checkpoint-rebase-bubble.js"
+    "rebase-bubble": "node scripts/checkpoint-rebase-bubble.mjs"
   },
   "dependencies": {
     "@theme-ui/presets": "^0.9.1",

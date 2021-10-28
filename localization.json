@@ -3,6 +3,11 @@
     "indexPage": {
       "projectTitle": "To-Do List Project"
     },
+    "languageSelect": {
+      "language": "Language:",
+      "en-US": "English",
+      "tlh": "Klingon"
+    },
     "todoInput": {
       "inputLabel": "To-do item input",
       "add": "Add"
@@ -14,6 +19,11 @@
   "tlh": {
     "indexPage": {
       "projectTitle": "DaytuqQo'qoq"
+    },
+    "languageSelect": {
+      "language": "Hol:",
+      "en-US": "Te ra'",
+      "tlh": "tlhIngan"
     },
     "todoInput": {
       "inputLabel": "'e' yIlIjQo', ghaH'e'",

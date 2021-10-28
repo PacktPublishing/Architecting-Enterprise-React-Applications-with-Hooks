@@ -3,7 +3,7 @@ import { Col, Button, Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 
 function TodoInput(props, ref) {
-  const { todoInput: localizedStrings } = useContext(LocalizationContext);
+  const { localizedStrings } = useContext(LocalizationContext);
 
   const [description, setDescription] = useState("");
 
@@ -11,14 +11,14 @@ function TodoInput(props, ref) {
     <Form.Row {...props}>
       <Col>
         <Form.Control
-          aria-label={localizedStrings.inputLabel}
+          aria-label={localizedStrings.todoInput.inputLabel}
           value={description}
           onChange={(event) => setDescription(event.target.value)}
           ref={ref}
         />
       </Col>
       <Col xs="auto">
-        <Button>{localizedStrings.add}</Button>
+        <Button>{localizedStrings.todoInput.add}</Button>
       </Col>
     </Form.Row>
   );

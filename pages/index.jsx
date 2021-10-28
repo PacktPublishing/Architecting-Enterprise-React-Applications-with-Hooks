@@ -6,16 +6,16 @@ import TodoList from "../components/TodoList";
 import { LocalizationContext } from "../contexts/localization";
 
 export default function Home() {
-  const { indexPage: localizedStrings } = useContext(LocalizationContext);
+  const { localizedStrings } = useContext(LocalizationContext);
 
   return (
     <Container fluid style={{ maxWidth: "720px" }} className="mt-5">
       <Head>
-        <title>{localizedStrings.projectTitle}</title>
+        <title>{localizedStrings.indexPage.projectTitle}</title>
       </Head>
 
       <h1 className="mb-5" style={{ textAlign: "center" }}>
-        {localizedStrings.projectTitle}
+        {localizedStrings.indexPage.projectTitle}
       </h1>
 
       <TodoInput className="mb-5" />

@@ -5,7 +5,7 @@ import { addTask as dbAddTask } from "../models/database";
 import { SAVED_INPUT } from "../models/localStorage-keys";
 
 export default function TodoInput(props) {
-  const { localizedStrings } = useContext(LocalizationContext);
+  const localizedStrings = useContext(LocalizationContext);
 
   const inputRef = useRef(null);
 

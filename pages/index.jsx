@@ -8,7 +8,7 @@ import TodoList from "../components/TodoList";
 import DeleteAllCompletedButton from "../components/DeleteAllCompletedButton";
 
 export default function Home() {
-  const { localizedStrings } = useContext(LocalizationContext);
+  const localizedStrings = useContext(LocalizationContext);
 
   const [{ tasks, dbConnected }, setTasksDbState] = useState({
     tasks: [],

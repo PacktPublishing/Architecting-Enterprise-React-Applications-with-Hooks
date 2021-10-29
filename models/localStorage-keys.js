@@ -1,1 +1,2 @@
-export const SAVED_INPUT = "saved-input";
+export const SAVED_INPUT = "savedInput";
+export const SETTINGS = "settings";

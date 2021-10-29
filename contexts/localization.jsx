@@ -1,4 +1,10 @@
-import React, { createContext, useLayoutEffect, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useLayoutEffect,
+  useState,
+} from "react";
+import { SettingsContext } from "./settings";
 import localization from "../localization.json";
 
 const supportedLocales = Object.keys(localization);
@@ -6,8 +12,9 @@ const supportedLocales = Object.keys(localization);
 export const LocalizationContext = createContext();
 
 export function LocalizationProvider({ children }) {
-  const [locale, setLocale] = useState("tlh");
+  const settings = useContext(SettingsContext);
 
+  const [closestUserLocale, setClosestUserLocale] = useState("en-US");
   useLayoutEffect(() => {
     const userLocales = (navigator?.languages ?? [navigator?.language]).filter(
       (language) => language != null
@@ -20,20 +27,16 @@ export function LocalizationProvider({ children }) {
         supportedLocales.find((locale) => locale.startsWith(userLanguage));
 
       if (resolvedLocale) {
-        setLocale(resolvedLocale);
+        setClosestUserLocale(resolvedLocale);
         break;
       }
     }
   }, []);
 
+  const locale = settings.locale.get() ?? closestUserLocale;
+
   return (
-    <LocalizationContext.Provider
-      value={{
-        locale,
-        setLocale,
-        localizedStrings: localization[locale],
-      }}
-    >
+    <LocalizationContext.Provider value={localization[locale]}>
       {children}
     </LocalizationContext.Provider>
   );

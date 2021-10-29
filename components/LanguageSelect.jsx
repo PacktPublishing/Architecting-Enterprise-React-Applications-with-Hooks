@@ -6,11 +6,12 @@ import {
   ToggleButton,
   ToggleButtonGroup,
 } from "react-bootstrap";
+import { SettingsContext } from "../contexts/settings";
 import { LocalizationContext } from "../contexts/localization";
 
 export default function LanguageSelect() {
-  const { locale, setLocale, localizedStrings } =
-    useContext(LocalizationContext);
+  const settings = useContext(SettingsContext);
+  const localizedStrings = useContext(LocalizationContext);
 
   return (
     <Row className="m-3 justify-content-end">
@@ -22,8 +23,8 @@ export default function LanguageSelect() {
         <ToggleButtonGroup
           type="radio"
           name="language-select"
-          value={locale}
-          onChange={setLocale}
+          value={settings.locale.get()}
+          onChange={settings.locale.set}
         >
           <LanguageButton value="en-US" />
           <LanguageButton value="tlh" />
@@ -34,7 +35,7 @@ export default function LanguageSelect() {
 }
 
 function LanguageButton({ value, ...props }) {
-  const { localizedStrings } = useContext(LocalizationContext);
+  const localizedStrings = useContext(LocalizationContext);
   return (
     <ToggleButton
       id={`language-select-${value}`}

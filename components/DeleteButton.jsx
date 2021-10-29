@@ -7,7 +7,7 @@ import { merge } from "lodash";
 import { LocalizationContext } from "../contexts/localization";
 
 export default function DeleteButton({ visible, style, className, ...props }) {
-  const { localizedStrings } = useContext(LocalizationContext);
+  const localizedStrings = useContext(LocalizationContext);
 
   return (
     <Button

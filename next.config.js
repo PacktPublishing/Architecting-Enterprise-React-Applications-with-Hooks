@@ -160,7 +160,7 @@ module.exports = {
       {
         source: "/checkpoint-2.6",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.6/pages/_app.jsx",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_2.6/contexts/localization.jsx",
         permanent: true,
       },
       {

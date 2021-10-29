@@ -20,11 +20,12 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 1.11](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.11%5E..Checkpoint_1.11)
 - [Checkpoint 1.12](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.12%5E..Checkpoint_1.12)
 - [Checkpoint 1.13](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.13%5E..Checkpoint_1.13)
-- [Checkpoint 1.14](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.14/components/LanguageSelect.jsx)
-- [Checkpoint 1.15](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.15)
-- [Checkpoint 1.16](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.16/reducers/todoListReducer.js)
-- [Checkpoint 1.17](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.16..Checkpoint_1.17)
-- [Checkpoint 1.18](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.18%5E..Checkpoint_1.18)
+- [Checkpoint 1.14](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.14%5E..Checkpoint_1.14)
+- [Checkpoint 1.15](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.15/components/LanguageSelect.jsx)
+- [Checkpoint 1.16](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.16)
+- [Checkpoint 1.17](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.17/reducers/todoListReducer.js)
+- [Checkpoint 1.18](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.17..Checkpoint_1.18)
+- [Checkpoint 1.19](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.19%5E..Checkpoint_1.19)
 
 ### Chapter 2: Side Effects – Reaching Outside of React
 

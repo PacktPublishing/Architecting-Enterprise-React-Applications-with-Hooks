@@ -88,31 +88,37 @@ module.exports = {
       {
         source: "/checkpoint-1.14",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.14/components/LanguageSelect.jsx",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.14%5E..Checkpoint_1.14",
         permanent: true,
       },
       {
         source: "/checkpoint-1.15",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.15",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.15/components/LanguageSelect.jsx",
         permanent: true,
       },
       {
         source: "/checkpoint-1.16",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.16/reducers/todoListReducer.js",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_1.16",
         permanent: true,
       },
       {
         source: "/checkpoint-1.17",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.16..Checkpoint_1.17",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_1.17/reducers/todoListReducer.js",
         permanent: true,
       },
       {
         source: "/checkpoint-1.18",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.18%5E..Checkpoint_1.18",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.17..Checkpoint_1.18",
+        permanent: true,
+      },
+      {
+        source: "/checkpoint-1.19",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_1.19%5E..Checkpoint_1.19",
         permanent: true,
       },
       {

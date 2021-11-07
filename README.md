@@ -45,3 +45,5 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 2.13](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_2.12..Checkpoint_2.13)
 
 ### Chapter 3: Optimization and Debugging
+
+- [Checkpoint 3.0](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/tree/Checkpoint_3.0)

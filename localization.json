@@ -1,26 +1,34 @@
 {
   "en-US": {
     "add": "Add",
+    "badTaskCount": "Bad task count:",
     "deleteAllCompleted": "Delete all completed tasks",
     "deleteTask": "Delete task",
-    "projectTitle": "To-Do List Project",
+    "goodTaskCount": "Good task count:",
+    "home": "Home",
     "inputLabel": "To-do item input",
     "language": {
       "label": "Language:",
       "en-US": "English",
       "tlh": "Klingon"
-    }
+    },
+    "projectTitle": "To-Do List Project",
+    "settings": "Settings"
   },
   "tlh": {
     "add": "boq",
+    "badTaskCount": "'ach HeSwI''e' je.",
     "deleteAllCompleted": "ghotvam ghotvam",
     "deleteTask": "Dov'a'",
-    "projectTitle": "DaytuqQo'qoq",
+    "goodTaskCount": "vaj DataHvIS.",
+    "home": "juH",
     "inputLabel": "'e' yIlIjQo', ghaH'e'",
     "language": {
       "label": "Hol:",
       "en-US": "Te ra'",
       "tlh": "tlhIngan"
-    }
+    },
+    "projectTitle": "DaytuqQo'qoq",
+    "settings": "'aw'"
   }
 }

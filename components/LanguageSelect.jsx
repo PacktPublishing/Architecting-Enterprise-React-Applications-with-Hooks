@@ -1,36 +1,26 @@
-import React, { useContext } from "react";
-import {
-  Col,
-  Form,
-  Row,
-  ToggleButton,
-  ToggleButtonGroup,
-} from "react-bootstrap";
-import { SettingsContext } from "../contexts/settings";
+import React, { Fragment, useContext } from "react";
+import { Form, ToggleButton, ToggleButtonGroup } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 
-export default function LanguageSelect() {
-  const settings = useContext(SettingsContext);
+export default function LanguageSelect({ locale, setLocale }) {
   const localizedStrings = useContext(LocalizationContext);
 
   return (
-    <Row className="m-3 justify-content-end">
-      <Form.Label htmlFor="language-select" column xs="auto">
+    <Form.Group as={Fragment}>
+      <Form.Label htmlFor="language-select" className="m-0">
         {localizedStrings.language.label}
       </Form.Label>
 
-      <Col xs="auto">
-        <ToggleButtonGroup
-          type="radio"
-          name="language-select"
-          value={settings.locale.get()}
-          onChange={settings.locale.set}
-        >
-          <LanguageButton value="en-US" />
-          <LanguageButton value="tlh" />
-        </ToggleButtonGroup>
-      </Col>
-    </Row>
+      <ToggleButtonGroup
+        type="radio"
+        name="language-select"
+        value={locale}
+        onChange={setLocale}
+      >
+        <LanguageButton value="en-US" />
+        <LanguageButton value="tlh" />
+      </ToggleButtonGroup>
+    </Form.Group>
   );
 }
 
@@ -41,7 +31,7 @@ function LanguageButton({ value, ...props }) {
       id={`language-select-${value}`}
       value={value}
       variant="outline-primary"
-      style={{ width: "6rem" }}
+      style={{ width: "max-content" }}
       {...props}
     >
       {localizedStrings.language[value]}

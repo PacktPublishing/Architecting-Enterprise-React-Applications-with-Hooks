@@ -6,6 +6,8 @@ export const SettingsContext = createContext();
 
 const defaultSettings = {
   locale: null,
+  goodTaskCount: 3,
+  badTaskCount: 10,
 };
 
 export function SettingsProvider({ children }) {

@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 import { subscribeToTaskList } from "../models/database";
 import { LocalizationContext } from "../contexts/localization";
-import LanguageSelect from "../components/LanguageSelect";
 import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
 import DeleteAllCompletedButton from "../components/DeleteAllCompletedButton";
@@ -35,15 +33,11 @@ export default function Home() {
   return (
     dbConnected && (
       <>
-        <LanguageSelect />
+        <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>
 
-        <Container fluid style={{ maxWidth: "720px" }} className="mt-5 mb-4">
-          <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>
-
-          <TodoInput className="mb-5" />
-          <TodoList tasks={tasks} className="mb-4" />
-          <DeleteAllCompletedButton className="d-block mx-auto" />
-        </Container>
+        <TodoInput className="mb-5" />
+        <TodoList tasks={tasks} className="mb-4" />
+        <DeleteAllCompletedButton className="d-block mx-auto" />
       </>
     )
   );

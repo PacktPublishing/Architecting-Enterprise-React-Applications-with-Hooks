@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
+    "divlo.vscode-styled-jsx-languageserver",
+    "divlo.vscode-styled-jsx-syntax",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker"
   ]

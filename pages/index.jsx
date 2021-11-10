@@ -35,7 +35,7 @@ export default function Home() {
       <>
         <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>
 
-        <TodoInput className="mb-5" />
+        <TodoInput incompleteTaskCount={incompleteTaskCount} className="mb-5" />
         <TodoList tasks={tasks} className="mb-4" />
         <DeleteAllCompletedButton className="d-block mx-auto" />
       </>

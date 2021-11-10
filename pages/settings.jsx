@@ -22,15 +22,15 @@ export default function Settings() {
         }}
       >
         <LanguageSelect
-          locale={settings.locale.get()}
-          setLocale={settings.locale.set}
+          locale={settings.locale}
+          setLocale={settings.set.locale}
         />
 
         <TaskCountSettings
-          goodCount={settings.goodTaskCount.get()}
-          setGoodCount={settings.goodTaskCount.set}
-          badCount={settings.badTaskCount.get()}
-          setBadCount={settings.badTaskCount.set}
+          goodCount={settings.goodTaskCount}
+          setGoodCount={settings.set.goodTaskCount}
+          badCount={settings.badTaskCount}
+          setBadCount={settings.set.badTaskCount}
         />
       </Form>
     </>

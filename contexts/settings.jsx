@@ -4,11 +4,11 @@ import { SETTINGS } from "../models/localStorage-keys";
 
 export const SettingsContext = createContext();
 
-const defaultSettings = {
+const defaultSettings = Object.freeze({
   locale: null,
   goodTaskCount: 3,
   badTaskCount: 10,
-};
+});
 
 export function SettingsProvider({ children }) {
   const [settings, setSettings] = useState(defaultSettings);
@@ -25,16 +25,14 @@ export function SettingsProvider({ children }) {
     updateLocalAndStoredSettings(settingsJson ? JSON.parse(settingsJson) : {});
   }, []);
 
-  const settingsContext = {};
-  for (const [key, value] of Object.entries(settings)) {
-    settingsContext[key] = {
-      get: () => value,
-      set: (newValue) => updateLocalAndStoredSettings({ [key]: newValue }),
-    };
+  const setters = {};
+  for (const key in defaultSettings) {
+    setters[key] = (newValue) =>
+      updateLocalAndStoredSettings({ [key]: newValue });
   }
 
   return (
-    <SettingsContext.Provider value={settingsContext}>
+    <SettingsContext.Provider value={{ ...settings, set: setters }}>
       {children}
     </SettingsContext.Provider>
   );

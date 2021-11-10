@@ -33,7 +33,7 @@ export function LocalizationProvider({ children }) {
     }
   }, []);
 
-  const locale = settings.locale.get() ?? closestUserLocale;
+  const locale = settings.locale ?? closestUserLocale;
 
   return (
     <LocalizationContext.Provider value={localization[locale]}>

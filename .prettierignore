@@ -1,3 +1,5 @@
+*.webmanifest
+
 # Next.js recommended .gitignore
 
 # dependencies

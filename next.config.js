@@ -208,7 +208,7 @@ module.exports = {
       {
         source: "/checkpoint-3.0",
         destination:
-          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.0/components/TodoInput.jsx#L27-L52",
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.0/components/TodoInput.jsx#L29-L54",
         permanent: true,
       },
     ];

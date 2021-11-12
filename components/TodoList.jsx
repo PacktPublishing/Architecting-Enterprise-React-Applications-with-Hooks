@@ -2,11 +2,7 @@ import React, { useEffect, useRef } from "react";
 import anime from "animejs";
 import TodoItem from "./TodoItem";
 
-let renderNumber = 0;
-
 export default function TodoList({ tasks, ...containerProps }) {
-  console.log(`Starting TodoList render #${++renderNumber}`);
-
   const container = useRef(null);
   const lastCompletedIndex = useRef(null);
   const setLastCompletedIndex = (index) => {
@@ -15,8 +11,6 @@ export default function TodoList({ tasks, ...containerProps }) {
   const allTasksCompleted = tasks.every((task) => task.completed);
   const allTasksPrevCompleted = useRef(null);
   useEffect(() => {
-    console.log(`Running effect defined in render #${renderNumber}`);
-
     if (allTasksPrevCompleted.current === false && allTasksCompleted) {
       startWiggleAnimation(
         container.current.children,

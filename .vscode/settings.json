@@ -8,5 +8,9 @@
     "fortawesome",
     "Packt",
     "Vercel"
-  ]
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.associations": {
+    "*.jsx": "javascriptreact"
+  }
 }

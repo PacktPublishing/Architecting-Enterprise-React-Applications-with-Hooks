@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useMemo, useState } from "react";
 import { Col, Button, Form, Row } from "react-bootstrap";
 import chroma from "chroma-js";
 import css from "styled-jsx/css";
@@ -25,33 +25,35 @@ export default function TodoInput({ incompleteTaskCount, ...props }) {
     }
   }
 
-  console.log(`Color calculation #${++colorCalculationCount}`);
-  const colorScale = chroma
-    .scale([SUCCESS_COLOR, WARNING_COLOR, DANGER_COLOR])
-    .mode("lrgb")
-    .domain([settings.goodTaskCount, settings.badTaskCount]);
-  const baseColor = colorScale(incompleteTaskCount).hex();
-  const hoverFocusColor = chroma.mix(baseColor, "black", 0.15).hex();
-  const hoverFocusBorderColor = chroma.mix(baseColor, "black", 0.2).hex();
-  const focusShadowColor = chroma
-    .mix(baseColor, "white", 0.15)
-    .alpha(0.5)
-    .css();
-  const addButtonCss = css.resolve`
-    button {
-      background-color: ${baseColor};
-      border-color: ${baseColor};
-    }
-    button:hover {
-      background-color: ${hoverFocusColor};
-      border-color: ${hoverFocusBorderColor};
-    }
-    button:focus {
-      background-color: ${hoverFocusColor};
-      border-color: ${hoverFocusBorderColor};
-      box-shadow: 0 0 0 0.25rem ${focusShadowColor};
-    }
-  `;
+  const addButtonCss = useMemo(() => {
+    console.log(`Color calculation #${++colorCalculationCount}`);
+    const colorScale = chroma
+      .scale([SUCCESS_COLOR, WARNING_COLOR, DANGER_COLOR])
+      .mode("lrgb")
+      .domain([settings.goodTaskCount, settings.badTaskCount]);
+    const baseColor = colorScale(incompleteTaskCount).hex();
+    const hoverFocusColor = chroma.mix(baseColor, "black", 0.15).hex();
+    const hoverFocusBorderColor = chroma.mix(baseColor, "black", 0.2).hex();
+    const focusShadowColor = chroma
+      .mix(baseColor, "white", 0.15)
+      .alpha(0.5)
+      .css();
+    return css.resolve`
+      button {
+        background-color: ${baseColor};
+        border-color: ${baseColor};
+      }
+      button:hover {
+        background-color: ${hoverFocusColor};
+        border-color: ${hoverFocusBorderColor};
+      }
+      button:focus {
+        background-color: ${hoverFocusColor};
+        border-color: ${hoverFocusBorderColor};
+        box-shadow: 0 0 0 0.25rem ${focusShadowColor};
+      }
+    `;
+  });
 
   return (
     <Row {...props}>

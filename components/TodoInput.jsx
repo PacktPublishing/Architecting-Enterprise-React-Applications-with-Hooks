@@ -53,7 +53,7 @@ export default function TodoInput({ incompleteTaskCount, ...props }) {
         box-shadow: 0 0 0 0.25rem ${focusShadowColor};
       }
     `;
-  });
+  }, [incompleteTaskCount, settings.badTaskCount, settings.goodTaskCount]);
 
   return (
     <Row {...props}>

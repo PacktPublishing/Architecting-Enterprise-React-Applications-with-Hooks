@@ -13,7 +13,8 @@
       "tlh": "Klingon"
     },
     "projectTitle": "To-Do List Project",
-    "settings": "Settings"
+    "settings": "Settings",
+    "showCompletedTasks": "Show completed tasks"
   },
   "tlh": {
     "add": "boq",
@@ -29,6 +30,7 @@
       "tlh": "tlhIngan"
     },
     "projectTitle": "DaytuqQo'qoq",
-    "settings": "'aw'"
+    "settings": "'aw'",
+    "showCompletedTasks": "yIjatlhqa', qoHlu'DI'"
   }
 }

@@ -47,4 +47,4 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 ### Chapter 3: Optimization and Debugging
 
 - [Checkpoint 3.0](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.0/components/TodoInput.jsx#L29-L54)
-- [Checkpoint 3.1](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_3.1%5E%5E..Checkpoint_3.1)
+- [Checkpoint 3.1](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_3.1%5E%5E%5E%5E..Checkpoint_3.1)

@@ -34,12 +34,16 @@ export default function Home() {
 
   const [showCompleted, setShowCompleted] = useState(false);
 
+  const [inputValue, setInputValue] = useState("");
+
   return (
     dbConnected && (
       <>
         <h1 className="mb-5 text-center">{localizedStrings.projectTitle}</h1>
 
         <TodoInput
+          inputValue={inputValue}
+          setInputValue={setInputValue}
           incompleteTaskCount={incompleteTasks.length}
           className="mb-4"
         />

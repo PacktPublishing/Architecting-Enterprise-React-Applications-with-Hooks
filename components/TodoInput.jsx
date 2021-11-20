@@ -1,4 +1,4 @@
-import React, { useContext, useMemo, useState } from "react";
+import React, { useContext, useMemo } from "react";
 import { Col, Button, Form, Row } from "react-bootstrap";
 import chroma from "chroma-js";
 import css from "styled-jsx/css";
@@ -10,11 +10,14 @@ const SUCCESS_COLOR = "#28a745";
 const WARNING_COLOR = "#e3a900";
 const DANGER_COLOR = "#dc3545";
 
-export default function TodoInput({ incompleteTaskCount, ...props }) {
+export default function TodoInput({
+  inputValue,
+  setInputValue,
+  incompleteTaskCount,
+  ...props
+}) {
   const settings = useContext(SettingsContext);
   const localizedStrings = useContext(LocalizationContext);
-
-  const [inputValue, setInputValue] = useState("");
 
   async function addTask() {
     if (inputValue !== "") {

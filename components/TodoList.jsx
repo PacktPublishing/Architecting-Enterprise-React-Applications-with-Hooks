@@ -2,7 +2,11 @@ import React, { useEffect, useRef } from "react";
 import anime from "animejs";
 import TodoItem from "./TodoItem";
 
+let renderCount = 0;
+
 function TodoList({ tasks, ...containerProps }) {
+  console.log(`TodoList render #${++renderCount}`);
+
   const container = useRef(null);
   const lastCompletedIndex = useRef(null);
   const setLastCompletedIndex = (index) => {

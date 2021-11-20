@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import anime from "animejs";
 import TodoItem from "./TodoItem";
 
-export default function TodoList({ tasks, ...containerProps }) {
+function TodoList({ tasks, ...containerProps }) {
   const container = useRef(null);
   const lastCompletedIndex = useRef(null);
   const setLastCompletedIndex = (index) => {
@@ -36,6 +36,7 @@ export default function TodoList({ tasks, ...containerProps }) {
     </div>
   );
 }
+export default React.memo(TodoList);
 
 function startWiggleAnimation(targets, startingIndex) {
   anime({

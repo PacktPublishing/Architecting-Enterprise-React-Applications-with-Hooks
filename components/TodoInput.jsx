@@ -10,8 +10,6 @@ const SUCCESS_COLOR = "#28a745";
 const WARNING_COLOR = "#e3a900";
 const DANGER_COLOR = "#dc3545";
 
-let colorCalculationCount = 0;
-
 export default function TodoInput({ incompleteTaskCount, ...props }) {
   const settings = useContext(SettingsContext);
   const localizedStrings = useContext(LocalizationContext);
@@ -26,7 +24,6 @@ export default function TodoInput({ incompleteTaskCount, ...props }) {
   }
 
   const addButtonCss = useMemo(() => {
-    console.log(`Color calculation #${++colorCalculationCount}`);
     const colorScale = chroma
       .scale([SUCCESS_COLOR, WARNING_COLOR, DANGER_COLOR])
       .mode("lrgb")

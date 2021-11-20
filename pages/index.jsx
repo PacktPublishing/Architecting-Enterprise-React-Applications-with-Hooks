@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { subscribeToTaskList } from "../models/database";
 import { LocalizationContext } from "../contexts/localization";
 import ShowCompletedTasksSwitch from "../components/ShowCompletedTasksSwitch";
@@ -28,7 +28,10 @@ export default function Home() {
     };
   }, []);
 
-  const incompleteTasks = tasks.filter((task) => !task.completed);
+  const incompleteTasks = useMemo(
+    () => tasks.filter((task) => !task.completed),
+    [tasks]
+  );
 
   useEffect(() => {
     console.log(`Document title effect #${++effectCount}`);

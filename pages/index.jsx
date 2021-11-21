@@ -6,8 +6,6 @@ import TodoInput from "../components/TodoInput";
 import TodoList from "../components/TodoList";
 import DeleteAllCompletedButton from "../components/DeleteAllCompletedButton";
 
-let effectCount = 0;
-
 export default function Home() {
   const localizedStrings = useContext(LocalizationContext);
 
@@ -34,7 +32,6 @@ export default function Home() {
   );
 
   useEffect(() => {
-    console.log(`Document title effect #${++effectCount}`);
     document.title = `(${incompleteTasks.length}) ${localizedStrings.projectTitle}`;
   }, [incompleteTasks, localizedStrings.projectTitle]);
 

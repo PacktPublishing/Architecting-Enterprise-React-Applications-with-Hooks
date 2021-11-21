@@ -5,12 +5,12 @@ import LanguageSelect from "../components/LanguageSelect";
 import { SettingsContext } from "../contexts/settings";
 import TaskCountSettings from "../components/TaskCountSettings";
 
-const formStyle = {
+const formStyle = Object.freeze({
   display: "grid",
   gridTemplateColumns: "max-content min-content",
   alignItems: "center",
   gap: "1rem",
-};
+});
 
 export default function Settings() {
   const settings = useContext(SettingsContext);

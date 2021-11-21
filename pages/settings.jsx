@@ -1,23 +1,20 @@
-import React, { useContext, useMemo } from "react";
+import React, { useContext } from "react";
 import { Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 import LanguageSelect from "../components/LanguageSelect";
 import { SettingsContext } from "../contexts/settings";
 import TaskCountSettings from "../components/TaskCountSettings";
 
+const formStyle = {
+  display: "grid",
+  gridTemplateColumns: "max-content min-content",
+  alignItems: "center",
+  gap: "1rem",
+};
+
 export default function Settings() {
   const settings = useContext(SettingsContext);
   const localizedStrings = useContext(LocalizationContext);
-
-  const formStyle = useMemo(
-    () => ({
-      display: "grid",
-      gridTemplateColumns: "max-content min-content",
-      alignItems: "center",
-      gap: "1rem",
-    }),
-    []
-  );
 
   return (
     <>

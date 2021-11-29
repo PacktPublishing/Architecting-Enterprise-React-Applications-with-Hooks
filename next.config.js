@@ -223,6 +223,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_3.2%5E%5E..Checkpoint_3.2",
         permanent: true,
       },
+      {
+        source: "/checkpoint-3.3",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.3/pages/index.jsx#L55",
+        permanent: true,
+      },
     ];
   },
 };

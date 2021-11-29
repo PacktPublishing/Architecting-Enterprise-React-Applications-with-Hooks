@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 
-export default function ShowCompletedTasksSwitch({ value, toggle, ...props }) {
+function ShowCompletedTasksSwitch({ value, toggle, ...props }) {
   const localizedStrings = useContext(LocalizationContext);
 
   return (
@@ -17,3 +17,4 @@ export default function ShowCompletedTasksSwitch({ value, toggle, ...props }) {
     </div>
   );
 }
+export default React.memo(ShowCompletedTasksSwitch);

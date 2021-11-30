@@ -26,6 +26,7 @@ export default function TodoInput({
     }
   }
 
+  const t0 = performance.now();
   const addButtonCss = useMemo(() => {
     const colorScale = chroma
       .scale([SUCCESS_COLOR, WARNING_COLOR, DANGER_COLOR])
@@ -54,6 +55,8 @@ export default function TodoInput({
       }
     `;
   }, [incompleteTaskCount, settings.badTaskCount, settings.goodTaskCount]);
+  const t1 = performance.now();
+  console.log(`'useMemo' call took ${t1 - t0} ms.`);
 
   return (
     <Row {...props}>

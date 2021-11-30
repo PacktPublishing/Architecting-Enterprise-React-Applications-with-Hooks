@@ -2,11 +2,7 @@ import React, { useContext } from "react";
 import { Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 
-let renderCount = 0;
-
 function ShowCompletedTasksSwitch({ value, toggle, ...props }) {
-  console.log(`ShowCompletedTasksSwitch render #${++renderCount}`);
-
   const localizedStrings = useContext(LocalizationContext);
 
   return (

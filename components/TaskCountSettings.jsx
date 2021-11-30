@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useCallback, useContext } from "react";
 import { Form } from "react-bootstrap";
 import { LocalizationContext } from "../contexts/localization";
 
@@ -13,16 +13,16 @@ export default function TaskCountSettings({
 }) {
   const localizedStrings = useContext(LocalizationContext);
 
-  const handleGoodCountChange = (event) => {
+  const handleGoodCountChange = useCallback((event) => {
     const newGoodCount = Math.max(parseInt(event.target.value), MIN_GOOD_COUNT);
     setGoodCount(newGoodCount);
     if (newGoodCount >= badCount) setBadCount(newGoodCount + 1);
-  };
-  const handleBadCountChange = (event) => {
+  }, []);
+  const handleBadCountChange = useCallback((event) => {
     const newBadCount = Math.max(parseInt(event.target.value), MIN_BAD_COUNT);
     setBadCount(newBadCount);
     if (newBadCount <= goodCount) setGoodCount(newBadCount - 1);
-  };
+  }, []);
 
   return (
     <>

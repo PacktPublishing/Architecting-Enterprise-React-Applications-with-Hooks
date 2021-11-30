@@ -241,6 +241,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_3.4..Checkpoint_3.5",
         permanent: true,
       },
+      {
+        source: "/checkpoint-3.6",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.6/components/TodoInput.jsx#L29-L56",
+        permanent: true,
+      },
     ];
   },
 };

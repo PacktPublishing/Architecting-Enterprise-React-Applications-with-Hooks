@@ -229,6 +229,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.3/pages/index.jsx#L55",
         permanent: true,
       },
+      {
+        source: "/checkpoint-3.4",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.4/components/TaskCountSettings.jsx#L16-L25",
+        permanent: true,
+      },
     ];
   },
 };

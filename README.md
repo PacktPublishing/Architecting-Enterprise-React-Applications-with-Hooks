@@ -50,3 +50,4 @@ Being written by [Ty Mick](https://tymick.me), coming 2022 from [Packt Publishin
 - [Checkpoint 3.1](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_3.1%5E%5E%5E%5E..Checkpoint_3.1)
 - [Checkpoint 3.2](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_3.2%5E%5E..Checkpoint_3.2)
 - [Checkpoint 3.3](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.3/pages/index.jsx#L55)
+- [Checkpoint 3.4](https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.4/components/TaskCountSettings.jsx#L16-L25)

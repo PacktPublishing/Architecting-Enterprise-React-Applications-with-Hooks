@@ -13,16 +13,25 @@ export default function TaskCountSettings({
 }) {
   const localizedStrings = useContext(LocalizationContext);
 
-  const handleGoodCountChange = useCallback((event) => {
-    const newGoodCount = Math.max(parseInt(event.target.value), MIN_GOOD_COUNT);
-    setGoodCount(newGoodCount);
-    if (newGoodCount >= badCount) setBadCount(newGoodCount + 1);
-  }, []);
-  const handleBadCountChange = useCallback((event) => {
-    const newBadCount = Math.max(parseInt(event.target.value), MIN_BAD_COUNT);
-    setBadCount(newBadCount);
-    if (newBadCount <= goodCount) setGoodCount(newBadCount - 1);
-  }, []);
+  const handleGoodCountChange = useCallback(
+    (event) => {
+      const newGoodCount = Math.max(
+        parseInt(event.target.value),
+        MIN_GOOD_COUNT
+      );
+      setGoodCount(newGoodCount);
+      if (newGoodCount >= badCount) setBadCount(newGoodCount + 1);
+    },
+    [badCount, setBadCount, setGoodCount]
+  );
+  const handleBadCountChange = useCallback(
+    (event) => {
+      const newBadCount = Math.max(parseInt(event.target.value), MIN_BAD_COUNT);
+      setBadCount(newBadCount);
+      if (newBadCount <= goodCount) setGoodCount(newBadCount - 1);
+    },
+    [goodCount, setBadCount, setGoodCount]
+  );
 
   return (
     <>

@@ -235,6 +235,12 @@ module.exports = {
           "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/blob/Checkpoint_3.4/components/TaskCountSettings.jsx#L16-L25",
         permanent: true,
       },
+      {
+        source: "/checkpoint-3.5",
+        destination:
+          "https://github.com/PacktPublishing/Architecting-Enterprise-React-Applications-with-Hooks/compare/Checkpoint_3.4..Checkpoint_3.5",
+        permanent: true,
+      },
     ];
   },
 };

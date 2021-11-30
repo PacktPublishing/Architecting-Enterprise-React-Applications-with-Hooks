@@ -1,4 +1,10 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { subscribeToTaskList } from "../models/database";
 import { LocalizationContext } from "../contexts/localization";
 import ShowCompletedTasksSwitch from "../components/ShowCompletedTasksSwitch";
@@ -36,6 +42,10 @@ export default function Home() {
   }, [incompleteTasks, localizedStrings.projectTitle]);
 
   const [showCompleted, setShowCompleted] = useState(false);
+  const toggleShowCompleted = useCallback(
+    () => setShowCompleted((prev) => !prev),
+    []
+  );
 
   const [inputValue, setInputValue] = useState("");
 
@@ -52,7 +62,7 @@ export default function Home() {
         />
         <ShowCompletedTasksSwitch
           value={showCompleted}
-          toggle={() => setShowCompleted((prev) => !prev)}
+          toggle={toggleShowCompleted}
           className="mb-2"
         />
         <TodoList

@@ -1,4 +1,9 @@
-import React, { createContext, useLayoutEffect, useState } from "react";
+import React, {
+  createContext,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from "react";
 import { merge } from "immutable";
 import { SETTINGS } from "../models/localStorage-keys";
 
@@ -25,14 +30,22 @@ export function SettingsProvider({ children }) {
     updateLocalAndStoredSettings(settingsJson ? JSON.parse(settingsJson) : {});
   }, []);
 
-  const setters = {};
-  for (const key in defaultSettings) {
-    setters[key] = (newValue) =>
-      updateLocalAndStoredSettings({ [key]: newValue });
-  }
+  const setters = useMemo(() => {
+    const setters = {};
+    for (const key in defaultSettings) {
+      setters[key] = (newValue) =>
+        updateLocalAndStoredSettings({ [key]: newValue });
+    }
+    return setters;
+  }, []);
+
+  const contextValue = useMemo(
+    () => ({ ...settings, set: setters }),
+    [setters, settings]
+  );
 
   return (
-    <SettingsContext.Provider value={{ ...settings, set: setters }}>
+    <SettingsContext.Provider value={contextValue}>
       {children}
     </SettingsContext.Provider>
   );
